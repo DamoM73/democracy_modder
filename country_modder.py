@@ -4,11 +4,14 @@ from tkinter import messagebox
 
 WIDTH = 1252
 HEIGHT = 800
+
+# formatting
 BG_COLOUR = "light grey"
 ENTRY_COLOUR = "white"
 HEADING_1 = ("Arial",16)
 HEADING_2 = ("Arial",12)
 BODY = ("Arial",10)
+
 INFO = {"country" : "The common name of your country.\nFor example, Australia.",
     "leader" : "The common title for the leader of the country.\nFor example, President.",
     "pop" : "The number of people residing in the country (in millions).",
@@ -23,6 +26,9 @@ INFO = {"country" : "The common name of your country.\nFor example, Australia.",
     "description" : "A short paragraph describing the higlight of the country",
     "adult ed" : "Adult education subsidies are a way to encourage people to re-train and continue their education after they have joined the workforce. This includes evening classes and distance learning resources. These schemes help to raise the overall educational level of the workforce."
 }
+
+# sliders
+DEFAULT_SLIDER = ("None", "Low", "Medium", "High", "Maximum")
 
 # **** Functions ****
 def help_message(info):
@@ -134,8 +140,11 @@ policies_fr = LabelFrame(root,text="Policies", font=HEADING_1, bg= BG_COLOUR)
 policies_fr.grid(row=2, column=0, sticky=W, padx=5, pady=5)
 
 # Adult Education Subsidies
-Button(policies_fr, text="Adult Education Subsidies", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message(INFO["adult ed"]))\
+Button(policies_fr, text="Adult Education", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message(INFO["adult ed"]))\
     .grid(row=0, column=0, sticky=W, padx=5)
+adult_ed_control = StringVar()
+adult_ed_control.set(DEFAULT_SLIDER[0])
+OptionMenu(policies_fr,adult_ed_control,*DEFAULT_SLIDER).grid(row=0, column=1, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
