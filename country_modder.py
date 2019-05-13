@@ -144,7 +144,11 @@ Button(policies_fr, text="Adult Education", bg=BG_COLOUR, font=BODY, anchor=W, r
     .grid(row=0, column=0, sticky=W, padx=5)
 adult_ed_control = StringVar()
 adult_ed_control.set(DEFAULT_SLIDER[0])
-OptionMenu(policies_fr,adult_ed_control,*DEFAULT_SLIDER).grid(row=0, column=1, sticky=W, padx=5)
+adult_ed = OptionMenu(policies_fr, adult_ed_control,*DEFAULT_SLIDER)
+adult_ed.config(bg=BG_COLOUR)
+adult_ed["menu"].config(bg=BG_COLOUR)
+adult_ed.grid(row=0, column=1, sticky=W, padx=5)
+
 
 # **** run window loop ****
 root.mainloop()
