@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import messagebox
 
-WIDTH = 1252
+WIDTH = 1300
 HEIGHT = 800
 
 # formatting
@@ -33,10 +33,12 @@ INFO = {"country" : "The common name of your country.\nFor example, Australia.",
     "armed police" : "Arming police officers can be an effective strategy in deterring crime and maintaining order.\n\nOpponents would argue that it encourages criminals to use firearms in a 'criminal arms race'.\n\nCritics also worry that arming the police will distance them from law-abiding citizens.",
     "sun trade" : "The Christian religion generally recognizes the 'Sabbath' as a 'day of rest' and many religious people believe that there should be no shopping carried out on that day.\n\nSome trade unions also believe that an enforced day of rest prevents its members being exploited.",
     "biofuel" : "Biofuels can reduce oil demand, by mixing ethanol derived from corn with petro-chemical fuel.\n\nThis is generally popular with environmentalists.Farmers who earn money producing corn for biofuel use also benefit.\n\nBiofuels with a higher mix of ethanol can be subsidized through tax breaks.",
-    "border" : "Without some kind of customs checks at the borders, your country is open to the problem of mass illegal immigration.\n\nSome people argue that these immigrants cause crime, others that they take jobs away from your own citizens.\n\nBorder controls can be effective in reducing illegal immigration."
+    "border" : "Without some kind of customs checks at the borders, your country is open to the problem of mass illegal immigration.\n\nSome people argue that these immigrants cause crime, others that they take jobs away from your own citizens.\n\nBorder controls can be effective in reducing illegal immigration.",
+    "bus lanes" : "Setting aside specific lanes of a road for use only by buses (and perhaps taxis and motorbikes) is one way to get traffic flowing faster and avoid congestion. It also shortens journey times for public transport and therefore encourages usage.\n\nThere are noticeable costs involved in setting up such schemes, and motorists can be annoyed if the bus lanes seem empty while they remain stuck in traffic."
     }
 
 # sliders
+NAME_LISTS = ("Australia", "Canada", "France", "Germany", "UK", "USA")
 DEFAULT_SLIDER = ("None", "Low", "Medium", "High", "Maximum")
 ALCOHOL_SLIDER = ("No limits", "Min age 16", "Min age 18", "Min age 21", "Low stregnth beer", "Strong retrictions")
 ARMED_POLICE_SLIDER = ("None","Specialists", "In every dept.", "Widespread", "Every Officer", "Submachineguns")
@@ -70,84 +72,81 @@ country_fr = LabelFrame(root, text="Country Details", font=HEADING_1, bg=BG_COLO
 country_fr.grid(row=1, column=0, columnspan=2, sticky=W, padx=5, pady=5)
 
 # country name
-Button(country_fr,text="Name", bg=BG_COLOUR, font=HEADING_2, width=9, anchor=W, relief=FLAT, command=lambda: help_message(INFO["country"]))\
+Button(country_fr,text="Name", bg=BG_COLOUR, font=BODY, width=9, anchor=W, relief=FLAT, command=lambda: help_message(INFO["country"]))\
     .grid(row=0, column=0, sticky=W)
 name_ent = Entry(country_fr, width=40, relief = FLAT, bg=ENTRY_COLOUR)
 name_ent.grid(row=0, column=1, padx=5, pady=5, sticky=W)
 
 # leader title
-Button(country_fr,text="Leader Title", bg=BG_COLOUR, font=HEADING_2, width=9, anchor=W, relief=FLAT, command=lambda: help_message(INFO["leader"]))\
+Button(country_fr,text="Leader Title", bg=BG_COLOUR, font=BODY, width=8, anchor=W, relief=FLAT, command=lambda: help_message(INFO["leader"]))\
     .grid(row=1, column=0, sticky=W)
 leader_ent = Entry(country_fr, width=40, relief = FLAT, bg=ENTRY_COLOUR)
 leader_ent.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
 # population
-Button(country_fr,text="Pop (million)", bg=BG_COLOUR, font=HEADING_2, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["pop"]))\
+Button(country_fr,text="Pop (million)", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["pop"]))\
     .grid(row=0, column=2, sticky=W)
 pop_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 pop_ent.grid(row=0, column=3, padx=5, pady=5, sticky=W)
 
 # currency symbol
-Button(country_fr,text="Currency Symbol", bg=BG_COLOUR, font=HEADING_2, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["currency"]))\
+Button(country_fr,text="Currency Symbol", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["currency"]))\
     .grid(row=1, column=2, sticky=W)
 currency_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 currency_ent.grid(row=1, column=3, padx=5, pady=5, sticky=W)
 
 # max income
-Button(country_fr,text="Max Income ('000)", bg=BG_COLOUR, font=HEADING_2, width=14, anchor=W, relief=FLAT, command=lambda: help_message(INFO["max_inc"]))\
+Button(country_fr,text="Max Income ('000)", bg=BG_COLOUR, font=BODY, width=14, anchor=W, relief=FLAT, command=lambda: help_message(INFO["max_inc"]))\
     .grid(row=0, column=4, sticky=W)
 max_inc_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 max_inc_ent.grid(row=0, column=5, padx=5, pady=5)
 
 # min income
-Button(country_fr,text="Min Income ('000)", bg=BG_COLOUR, font=HEADING_2, width=14, anchor=W, relief=FLAT, command=lambda: help_message(INFO["min_inc"]))\
+Button(country_fr,text="Min Income ('000)", bg=BG_COLOUR, font=BODY, width=14, anchor=W, relief=FLAT, command=lambda: help_message(INFO["min_inc"]))\
     .grid(row=1, column=4, sticky=W)
 min_inc_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 min_inc_ent.grid(row=1, column=5, padx=5, pady=5)
 
 # max gdp
-Button(country_fr,text="Max GDP (millions)", bg=BG_COLOUR, font=HEADING_2, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["max_gdp"]))\
+Button(country_fr,text="Max GDP (millions)", bg=BG_COLOUR, font=BODY, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["max_gdp"]))\
     .grid(row=0, column=6, sticky=W)
 max_gdp_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 max_gdp_ent.grid(row=0, column=7, padx=5, pady=5)
 
-# min gdp
-Button(country_fr,text="Debt (millions)", bg=BG_COLOUR, font=HEADING_2, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["debt"]))\
+# debt
+Button(country_fr,text="Debt (millions)", bg=BG_COLOUR, font=BODY, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["debt"]))\
     .grid(row=1, column=6, sticky=W)
 debt_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
 debt_ent.grid(row=1, column=7, padx=5, pady=5)
 
-# name file
-Button(country_fr,text="Citizen Names", bg=BG_COLOUR, font=HEADING_2, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["name_file"]))\
-    .grid(row=0, column=8, sticky=W, padx=5)
-names_file_lb = Listbox(country_fr, height=6, relief=FLAT, font=HEADING_2, width=12)
-names_file_lb.insert(1,"Australia")
-names_file_lb.insert(2,"Canada")
-names_file_lb.insert(3,"France")
-names_file_lb.insert(4,"Germany")
-names_file_lb.insert(5,"UK")
-names_file_lb.insert(6,"USA")
-names_file_lb.grid(row=1, column=8, sticky=NW, padx=5, rowspan=4)
 
+# name file
+Button(country_fr,text="Citizen Names", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["name_file"]))\
+    .grid(row=2, column=6, sticky=W)
+cit_name_sb = Spinbox(country_fr, values=NAME_LISTS, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=8)
+cit_name_sb.grid(row=2, column=7, sticky=W, padx=5)
+
+'''
 # Economic Cycle
-Button(country_fr,text="Global Economy", bg=BG_COLOUR, font=HEADING_2, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["economy"]))\
+Button(country_fr,text="Global Economy", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["economy"]))\
     .grid(row=0, column=9, sticky=SW)
 economic_control = IntVar()
 Scale(country_fr, variable=economic_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=120, highlightbackground=BG_COLOUR)\
     .grid(row=1,column=9, sticky=NW)
 
 # Wealth Indicator
-Button(country_fr,text="Relavitve wealth", bg=BG_COLOUR, font=HEADING_2, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["wealth"]))\
+Button(country_fr,text="Relavitve wealth", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["wealth"]))\
     .grid(row=3, column=9, sticky=SW)
 wealth_control = IntVar()
 Scale(country_fr, variable=wealth_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=120, highlightbackground=BG_COLOUR, from_=1, to=25)\
     .grid(row=4, column=9, sticky=NW)
+'''
 
 # Description
-Button(country_fr,text="Country Description", bg=BG_COLOUR, font=HEADING_2, relief=FLAT, width=20, anchor=W, command=lambda: help_message(INFO["description"]))\
-    .grid(row=3, column=0, columnspan=8, sticky=W)
-description_tb = Text(country_fr,width=120, height=5)
-description_tb.grid(row=4, column=0, columnspan=8, sticky=W, padx=5, pady=5)
+Button(country_fr,text="Country Description", bg=BG_COLOUR, font=BODY, relief=FLAT, width=20, anchor=W, command=lambda: help_message(INFO["description"]))\
+    .grid(row=0, column=8, sticky=W)
+description_tb = Text(country_fr,width=35, height=10)
+description_tb.grid(row=1, column=8, rowspan=4, sticky=W, padx=5, pady=5)
 
 
 # ** Policies Frame
@@ -207,6 +206,12 @@ Button(policies_fr, text="Border Controls", bg=BG_COLOUR, font=BODY, anchor=W, r
     .grid(row=8, column=0, sticky=W, padx=5)
 border_sb = Spinbox(policies_fr, values=BORDER_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 border_sb.grid(row=8, column=1, sticky=W, padx=5)
+
+# Bus Lanes
+Button(policies_fr, text="Bus Lanes", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message(INFO["bus lanes"]))\
+    .grid(row=9, column=0, sticky=W, padx=5)
+bus_lane_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+bus_lane_sb.grid(row=9, column=1, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
