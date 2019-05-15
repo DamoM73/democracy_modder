@@ -72,7 +72,7 @@ country_fr = LabelFrame(root, text="Country Details", font=HEADING_1, bg=BG_COLO
 country_fr.grid(row=1, column=0, columnspan=2, sticky=W, padx=5, pady=5)
 
 # country name
-Button(country_fr,text="Name", bg=BG_COLOUR, font=BODY, width=9, anchor=W, relief=FLAT, command=lambda: help_message(INFO["country"]))\
+Button(country_fr,text="Name", bg=BG_COLOUR, font=BODY, width=8, anchor=W, relief=FLAT, command=lambda: help_message(INFO["country"]))\
     .grid(row=0, column=0, sticky=W)
 name_ent = Entry(country_fr, width=40, relief = FLAT, bg=ENTRY_COLOUR)
 name_ent.grid(row=0, column=1, padx=5, pady=5, sticky=W)
@@ -109,45 +109,41 @@ min_inc_ent.grid(row=1, column=5, padx=5, pady=5)
 
 # max gdp
 Button(country_fr,text="Max GDP (millions)", bg=BG_COLOUR, font=BODY, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["max_gdp"]))\
-    .grid(row=0, column=6, sticky=W)
+    .grid(row=2, column=2, sticky=W)
 max_gdp_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
-max_gdp_ent.grid(row=0, column=7, padx=5, pady=5)
+max_gdp_ent.grid(row=2, column=3, padx=5, pady=5)
 
 # debt
 Button(country_fr,text="Debt (millions)", bg=BG_COLOUR, font=BODY, width=15, anchor=W, relief=FLAT, command=lambda: help_message(INFO["debt"]))\
-    .grid(row=1, column=6, sticky=W)
+    .grid(row=2, column=4, sticky=W)
 debt_ent = Entry(country_fr, width=10, relief = FLAT, bg=ENTRY_COLOUR)
-debt_ent.grid(row=1, column=7, padx=5, pady=5)
-
+debt_ent.grid(row=2, column=5, padx=5, pady=5)
 
 # name file
-Button(country_fr,text="Citizen Names", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["name_file"]))\
-    .grid(row=2, column=6, sticky=W)
-cit_name_sb = Spinbox(country_fr, values=NAME_LISTS, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=8)
-cit_name_sb.grid(row=2, column=7, sticky=W, padx=5)
+Button(country_fr,text="Citizen Names", bg=BG_COLOUR, font=BODY, width=9, anchor=W, relief=FLAT, command=lambda: help_message(INFO["name_file"]))\
+    .grid(row=2, column=0, sticky=W)
+cit_name_sb = Spinbox(country_fr, values=NAME_LISTS, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=33)
+cit_name_sb.grid(row=2, column=1, sticky=W, padx=5)
 
-'''
 # Economic Cycle
-Button(country_fr,text="Global Economy", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["economy"]))\
-    .grid(row=0, column=9, sticky=SW)
+Button(country_fr,text="Global Economy", bg=BG_COLOUR, font=BODY, width=12, anchor=W, relief=FLAT, command=lambda: help_message(INFO["economy"]))\
+    .grid(row=3, column=0, sticky=W)
 economic_control = IntVar()
-Scale(country_fr, variable=economic_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=120, highlightbackground=BG_COLOUR)\
-    .grid(row=1,column=9, sticky=NW)
+Scale(country_fr, variable=economic_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=250, highlightbackground=BG_COLOUR)\
+    .grid(row=3,column=1, sticky=NW)
 
 # Wealth Indicator
 Button(country_fr,text="Relavitve wealth", bg=BG_COLOUR, font=BODY, width=13, anchor=W, relief=FLAT, command=lambda: help_message(INFO["wealth"]))\
-    .grid(row=3, column=9, sticky=SW)
+    .grid(row=3, column=2, sticky=W)
 wealth_control = IntVar()
-Scale(country_fr, variable=wealth_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=120, highlightbackground=BG_COLOUR, from_=1, to=25)\
-    .grid(row=4, column=9, sticky=NW)
-'''
+Scale(country_fr, variable=wealth_control, orient=HORIZONTAL, bg=BG_COLOUR, relief=FLAT, length=270, highlightbackground=BG_COLOUR, from_=1, to=25)\
+    .grid(row=3, column=3, sticky=NW, columnspan=3)
 
 # Description
 Button(country_fr,text="Country Description", bg=BG_COLOUR, font=BODY, relief=FLAT, width=20, anchor=W, command=lambda: help_message(INFO["description"]))\
     .grid(row=0, column=8, sticky=W)
-description_tb = Text(country_fr,width=35, height=10)
-description_tb.grid(row=1, column=8, rowspan=4, sticky=W, padx=5, pady=5)
-
+description_tb = Text(country_fr,width=63, height=6)
+description_tb.grid(row=1, column=8, rowspan=3, sticky=W, padx=5, pady=5)
 
 # ** Policies Frame
 policies_fr = LabelFrame(root,text="Policies", font=HEADING_1, bg= BG_COLOUR)
