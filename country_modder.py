@@ -59,7 +59,12 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Free Eye Tests" : "Eye tests catch problems early and advise those with poor eyesight that they need glasses.\n\nGetting your eyes tested privately can be expensive, and it's a luxury many people just do without.\n\nSocialists believe that the universal provision of free eye tests are essential in providing a health 'safety net' for all.",
     "Free School Meals" : "Not only are free school meals a way of redistributing wealth by ensuring everyone can afford to feed their children.\n\nIt's also a way to ensure that children eat healthily rather than surviving purely on junk food.",
     "Gambling" : "To some, gambling is a sin which leads to poverty and disaster.\n\nOthers believe that some 'social' gambling is harmless fun which can also be taxed nicely by the government as an additional form of revenue.\n\nIt also encourages tourism and creates jobs.",
-    "Graduate tax" : "A graduate tax is a deciated tax levied purely on people graduating from university, as a way of them contributing to the cost of their university tuition.\n\nSupporters say this is fair because not everyone benefits from a university education.\n\nOpponents argue that it creates a disincentive to study purely academic subjects and the arts, as well as penalizing ambition."
+    "Graduate tax" : "A graduate tax is a deciated tax levied purely on people graduating from university, as a way of them contributing to the cost of their university tuition.\n\nSupporters say this is fair because not everyone benefits from a university education.\n\nOpponents argue that it creates a disincentive to study purely academic subjects and the arts, as well as penalizing ambition.",
+    "Handgun Laws" : "Some countries allow the virtually unrestricted ownership of any kind of firearm, whereas in others it is strictly controlled.\n\nSome people talk of the basic right to defend yourself, others are concerned that gun ownership leads to gun crime.",
+    "Hybrid Cars" : "Hybrid cars are less damaging to the environment, because at slower speeds they use electric engines that produce no CO2. They also get higher fuel efficiency, thus reducing demand for oil.\n\nThe downside is they are very expensive, but tax incentives can encourage more people to buy hybrid models when they get new cars.",
+    "ID Cards" : "Some say ID Cards act as a powerful deterrent against terrorism and other serious crimes.\n\nLiberals would argue that it is an infringement of an individual's civil liberties for the state to demand that citizens identify themselves on the spot.",
+    "Import Tariffs" : "Cheap imports can be damaging to the economy because local companies cannot match the lower salaries paid by foreign competitors.\n\nImport tariffs help to protect local manufacturers from 'unfair' competition.\n\nThis does go against real free-market economics though, and can be seen as being unfair to foreign countries, possibly sparking retaliation.",
+    "Income Tax" : "One of the most popular ways to raise money for government is a direct tax on peoples earnings, deducted at source by their employer.\n\nIncome tax is generally a progressive tax (the wealthy pay more as a fraction of their income than the poor) and for this reason it is popular with socialists and the low paid."
     }
 
 # sliders
@@ -75,6 +80,8 @@ CURFEWS_SLIDER = ("None", "For under 16s", "In certain areas", "1am to 3am", "12
 DEATH_SLIDER = ("None", "Mass murderers", "Homicide", "Homicide & rape", "Violent Crime", "Serious crime", "Most crime")
 DETENTION_SLIDER = ("None", "72 hours", "7 days", "30 days", "90 days", "Unlimited")
 GAMBLING_SLIDER = ("None", "Age and stakes limited", "No stakes limit", "No restrictions")
+HANDGUN_SLIDER = ("No limit", "No machineguns", "No automatics", "Licence required", "Licence & min age", "Strict controls", "Total ban")
+ID_SLIDER = ("Voluntary", "Widespread", "Compulsory", "Biometric", "Heavily enforced")
 
 
 
@@ -390,6 +397,38 @@ Button(policies_fr, text="Graduate tax", bg=BG_COLOUR, font=BODY, anchor=W, reli
     .grid(row=9, column=2, sticky=W, padx=5)
 grad_tax_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 grad_tax_sb.grid(row=9, column=3, sticky=W, padx=5)
+
+# Handgun Laws
+Button(policies_fr, text="Handgun Laws", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Handgun Laws"))\
+    .grid(row=10, column=2, sticky=W, padx=5)
+handgun_sb = Spinbox(policies_fr, values=HANDGUN_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+handgun_sb.grid(row=10, column=3, sticky=W, padx=5)
+
+# Hybrid Cars Initiative
+Button(policies_fr, text="Hybrid Cars", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Hybrid Cars"))\
+    .grid(row=11, column=2, sticky=W, padx=5)
+hybrid_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+hybrid_sb.grid(row=11, column=3, sticky=W, padx=5)
+
+# ID Cards
+Button(policies_fr, text="ID Cards", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("ID Cards"))\
+    .grid(row=12, column=2, sticky=W, padx=5)
+id_sb = Spinbox(policies_fr, values=ID_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+id_sb.grid(row=12, column=3, sticky=W, padx=5)
+
+# Import Tariffs
+Button(policies_fr, text="Import Tariffs", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Import Tariffs"))\
+    .grid(row=13, column=2, sticky=W, padx=5)
+tariffs_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+tariffs_sb.grid(row=13, column=3, sticky=W, padx=5)
+
+# Income Tax
+Button(policies_fr, text="Income Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Income Tax"))\
+    .grid(row=14, column=2, sticky=W, padx=5)
+income_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+income_tax_sb.grid(row=14, column=3, sticky=W, padx=5)
+
+
 
 
 # **** run window loop ****
