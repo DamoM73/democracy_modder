@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 
 WIDTH = 1300
-HEIGHT = 1000
+HEIGHT = 950
 
 # formatting
 BG_COLOUR = "light grey"
@@ -49,7 +49,15 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Consumer Rights" : "At a minimum level, the state guarantees that the consumer is not totally ripped off.\n\nAt the other end of the spectrum, draconian legislation can benefit the consumer at the expense of business.\n\nCompanies often complain about the amount of legislation governing selling to the public.",
     "Corporation Tax" : "A direct and proportionate tax on the profits of business.\n\nSome argue that this should be the only form of taxation, others that such taxes stifle entrepreneurship and discourage people from starting a business.\n\nIt is often one of the main ways the government brings in money.",
     "Creationism vs. Evolution" : "A bitter battle has raged about the way children are taught evolution versus creationism.\n\nScientists and Liberals consider it obvious that evidence based evolution should be taught in science classes.\n\nSome religious groups feel that it is wrong to teach evolution or 'Darwinism' as fact, when it remains an unproven theory or that creationism should be taught as an alternative theory in science.\n\nThe government has to decide what is taught in our schools.",
-    "Curfews" : "Introduced for a short period of time in state of national emergency. These can be an effective way to combat crime at the cost of much personal liberty.\n\nOften, however, limiting the ability of peaceful citizens to leave their homes at night can be a sign of a country's degeneration into severe authoritarianism."
+    "Curfews" : "Introduced for a short period of time in state of national emergency. These can be an effective way to combat crime at the cost of much personal liberty.\n\nOften, however, limiting the ability of peaceful citizens to leave their homes at night can be a sign of a country's degeneration into severe authoritarianism.",
+    "Death Penalty" : "The death penalty is the ultimate punishment for serious crimes.\n\nOpponents are concerned by the possibility of killing the wrong person, and suggest that only a barbaric state has the death penalty.\n\nSupporters point out that it absolutely guarantees no re-offending, and acts as a deterrent to serious crime.",
+    "Detention Without Trial" : "Detention without trial allows your police and security services to detain suspects when they do not have sufficient evidence (or cannot reveal sensitive evidence) to convict suspects.\n\nThis can be justified in the name of preventing terrorism, but Liberals are concerned that this infringes human-rights.",
+    "Disability Benefit" : "A direct payment from the state to disabled people to allow for the fact that they are possibly unable, or need assistance to work.\n\nAdditionally many disabled people have special requirements in terms of transport or housing.",
+    "Faith School Subsidies" : "Religious schools can achieve good academic standards.\n\nTheir supporters make a case that the government should subsidize methods of education that are proven to be effective.\n\nCritics say that religion has no place in education and that the government cannot be seen to 'push' a particular religion on children.",
+    "Foreign Aid" : "Some foreign countries have very poor economies, poor education or food shortages, and it can be argued that relatively rich nations such as ours have a moral duty to help them.\n\nOthers may argue that the first priority of any nation is to its own citizens, and if those citizens wish to help, they can do so individually through charities.",
+    "Free Bus Passes" : "Traditionally, free bus travel is offered as a concession to those citizens of retirement age.\n\nThis can be expensive, but it’s a great way to reduce car usage and thus reduce pollution and congestion.\n\nSome oppose such a distortion of the market however.",
+    "Free Eye Tests" : "Eye tests catch problems early and advise those with poor eyesight that they need glasses.\n\nGetting your eyes tested privately can be expensive, and it's a luxury many people just do without.\n\nSocialists believe that the universal provision of free eye tests are essential in providing a health 'safety net' for all.",
+    "Free School Meals" : "Not only are free school meals a way of redistributing wealth by ensuring everyone can afford to feed their children.\n\nIt's also a way to ensure that children eat healthily rather than surviving purely on junk food."
     }
 
 # sliders
@@ -62,7 +70,8 @@ CCTV_SLIDER = ("None","Crime spots only", "Town centres", "Widespread", "Every s
 CONSUMER_SLIDER = ("None", "Limited rights", "Right to return goods", "Automated refunds", "Cooling-off periods")
 CREATION_SLIDER = ("Creation only", "Creation emphasis", "Both systems", "Evolution emphasis", "Evolution only")
 CURFEWS_SLIDER = ("None", "For under 16s", "In certain areas", "1am to 3am", "12am to 6am", "10pm to 8am")
-
+DEATH_SLIDER = ("None", "Mass murderers", "Homicide", "Homicide & rape", "Violent Crime", "Serious crime", "Most crime")
+DETENTION_SLIDER = ("None", "72 hours", "7 days", "30 days", "90 days", "Unlimited")
 
 
 # **** Functions ****
@@ -317,6 +326,54 @@ Button(policies_fr, text="Curfews", bg=BG_COLOUR, font=BODY, anchor=W, relief=FL
     .grid(row=24, column=0, sticky=W, padx=5)
 curfews_sb = Spinbox(policies_fr, values=CURFEWS_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 curfews_sb.grid(row=24, column=1, sticky=W, padx=5)
+
+# Death Penalty
+Button(policies_fr, text="Death Penalty", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Death Penalty"))\
+    .grid(row=0, column=2, sticky=W, padx=5)
+death_pen_sb = Spinbox(policies_fr, values=DEATH_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+death_pen_sb.grid(row=0, column=3, sticky=W, padx=5)
+
+# Detention Without Trial
+Button(policies_fr, text="Detention Without Trial", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Detention Without Trial"))\
+    .grid(row=1, column=2, sticky=W, padx=5)
+detention_sb = Spinbox(policies_fr, values=DETENTION_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+detention_sb.grid(row=1, column=3, sticky=W, padx=5)
+
+# Disability Benefit
+Button(policies_fr, text="Disability Benefit", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Disability Benefit"))\
+    .grid(row=2, column=2, sticky=W, padx=5)
+disability_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+disability_sb.grid(row=2, column=3, sticky=W, padx=5)
+
+# Faith School Subsidies
+Button(policies_fr, text="Faith School Subsidies", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Faith School Subsidies"))\
+    .grid(row=3, column=2, sticky=W, padx=5)
+faith_schools_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+faith_schools_sb.grid(row=3, column=3, sticky=W, padx=5)
+
+# Foreign Aid
+Button(policies_fr, text="Foreign Aid", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Foreign Aid"))\
+    .grid(row=4, column=2, sticky=W, padx=5)
+foreign_aid_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+foreign_aid_sb.grid(row=4, column=3, sticky=W, padx=5)
+
+# Bus Passes
+Button(policies_fr, text="Free Bus Passes", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Free Bus Passes"))\
+    .grid(row=5, column=2, sticky=W, padx=5)
+bus_passes_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+bus_passes_sb.grid(row=5, column=3, sticky=W, padx=5)
+
+# Free Eye Tests
+Button(policies_fr, text="Free Eye Tests", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Free Eye Tests"))\
+    .grid(row=6, column=2, sticky=W, padx=5)
+eye_tests_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+eye_tests_sb.grid(row=6, column=3, sticky=W, padx=5)
+
+# Free School Meals
+Button(policies_fr, text="Free School Meals", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Free School Meals"))\
+    .grid(row=7, column=2, sticky=W, padx=5)
+school_meals_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+school_meals_sb.grid(row=7, column=3, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
