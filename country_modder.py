@@ -57,7 +57,9 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Foreign Aid" : "Some foreign countries have very poor economies, poor education or food shortages, and it can be argued that relatively rich nations such as ours have a moral duty to help them.\n\nOthers may argue that the first priority of any nation is to its own citizens, and if those citizens wish to help, they can do so individually through charities.",
     "Free Bus Passes" : "Traditionally, free bus travel is offered as a concession to those citizens of retirement age.\n\nThis can be expensive, but it’s a great way to reduce car usage and thus reduce pollution and congestion.\n\nSome oppose such a distortion of the market however.",
     "Free Eye Tests" : "Eye tests catch problems early and advise those with poor eyesight that they need glasses.\n\nGetting your eyes tested privately can be expensive, and it's a luxury many people just do without.\n\nSocialists believe that the universal provision of free eye tests are essential in providing a health 'safety net' for all.",
-    "Free School Meals" : "Not only are free school meals a way of redistributing wealth by ensuring everyone can afford to feed their children.\n\nIt's also a way to ensure that children eat healthily rather than surviving purely on junk food."
+    "Free School Meals" : "Not only are free school meals a way of redistributing wealth by ensuring everyone can afford to feed their children.\n\nIt's also a way to ensure that children eat healthily rather than surviving purely on junk food.",
+    "Gambling" : "To some, gambling is a sin which leads to poverty and disaster.\n\nOthers believe that some 'social' gambling is harmless fun which can also be taxed nicely by the government as an additional form of revenue.\n\nIt also encourages tourism and creates jobs.",
+    "Graduate tax" : "A graduate tax is a deciated tax levied purely on people graduating from university, as a way of them contributing to the cost of their university tuition.\n\nSupporters say this is fair because not everyone benefits from a university education.\n\nOpponents argue that it creates a disincentive to study purely academic subjects and the arts, as well as penalizing ambition."
     }
 
 # sliders
@@ -72,6 +74,8 @@ CREATION_SLIDER = ("Creation only", "Creation emphasis", "Both systems", "Evolut
 CURFEWS_SLIDER = ("None", "For under 16s", "In certain areas", "1am to 3am", "12am to 6am", "10pm to 8am")
 DEATH_SLIDER = ("None", "Mass murderers", "Homicide", "Homicide & rape", "Violent Crime", "Serious crime", "Most crime")
 DETENTION_SLIDER = ("None", "72 hours", "7 days", "30 days", "90 days", "Unlimited")
+GAMBLING_SLIDER = ("None", "Age and stakes limited", "No stakes limit", "No restrictions")
+
 
 
 # **** Functions ****
@@ -374,6 +378,19 @@ Button(policies_fr, text="Free School Meals", bg=BG_COLOUR, font=BODY, anchor=W,
     .grid(row=7, column=2, sticky=W, padx=5)
 school_meals_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 school_meals_sb.grid(row=7, column=3, sticky=W, padx=5)
+
+# Gambling
+Button(policies_fr, text="Gambling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Gambling"))\
+    .grid(row=8, column=2, sticky=W, padx=5)
+gambling_sb = Spinbox(policies_fr, values=GAMBLING_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+gambling_sb.grid(row=8, column=3, sticky=W, padx=5)
+
+# Graduate tax
+Button(policies_fr, text="Graduate tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Graduate tax"))\
+    .grid(row=9, column=2, sticky=W, padx=5)
+grad_tax_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+grad_tax_sb.grid(row=9, column=3, sticky=W, padx=5)
+
 
 # **** run window loop ****
 root.mainloop()
