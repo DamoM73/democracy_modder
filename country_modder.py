@@ -64,8 +64,38 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Hybrid Cars" : "Hybrid cars are less damaging to the environment, because at slower speeds they use electric engines that produce no CO2. They also get higher fuel efficiency, thus reducing demand for oil.\n\nThe downside is they are very expensive, but tax incentives can encourage more people to buy hybrid models when they get new cars.",
     "ID Cards" : "Some say ID Cards act as a powerful deterrent against terrorism and other serious crimes.\n\nLiberals would argue that it is an infringement of an individual's civil liberties for the state to demand that citizens identify themselves on the spot.",
     "Import Tariffs" : "Cheap imports can be damaging to the economy because local companies cannot match the lower salaries paid by foreign competitors.\n\nImport tariffs help to protect local manufacturers from 'unfair' competition.\n\nThis does go against real free-market economics though, and can be seen as being unfair to foreign countries, possibly sparking retaliation.",
-    "Income Tax" : "One of the most popular ways to raise money for government is a direct tax on peoples earnings, deducted at source by their employer.\n\nIncome tax is generally a progressive tax (the wealthy pay more as a fraction of their income than the poor) and for this reason it is popular with socialists and the low paid."
-    }
+    "Income Tax" : "One of the most popular ways to raise money for government is a direct tax on peoples earnings, deducted at source by their employer.\n\nIncome tax is generally a progressive tax (the wealthy pay more as a fraction of their income than the poor) and for this reason it is popular with socialists and the low paid.",
+    "Flat Income Tax" : "A flat-rate income tax is a tax where every citizen pays the same marginal rate of income tax regardless of their total income.\n\nAs a result, the cleaner in the office pays the same rate as the CEO, though the CEO's total tax bill will be higher.\n\nThis simpler structure can lead to lower avoidance and evasion.\n\nIt is not progressive, and can exacerbate income inequality.",
+    "Capital Gains Tax" : "CGT is a tax levied on non-salary income such as stock market profits and share dividends, and profits from selling property or other assets.\n\nPrimarily it affects the wealthy and business owners, and will raise more money if the economy is booming.\n\nBecause it taxes profits from investments, it also acts as a slight deterrent to investment and thus be detrimental to the economy.",
+    "Inheritance Tax" : "A tax paid on the wealth of an individual as it is passed on to their descendants.\n\nAn inheritance tax protects equality, by preventing families amassing wealth and advantage over the generations, so it is popular with socialists and the poor.\n\nHowever, some people are strongly opposed to anything that prevents them handing on their hard-earned wealth, especially their house, to their children.",
+    "Intelligence Services" : "Security services are an essential tool in the fight against organized crime and terrorism.\n\nGood, reliable intelligence can be difficult and expensive to obtain, and in many cases the methods employed can be unpopular with liberals and human rights advocates.",
+    "Internet Censorship" : "Liberals would suggest that the internet's greatest characteristic is its freedom from censorship and control, leading to an open and tolerant society.\n\nFreedom has its price however, and there is no shortage of material on the internet that can assist those with criminal intent.\n\nOpinion on what should and should not be censored on the web is bitterly divided.",
+    "Internet Tax" : "As more and more commerce moves from conventional 'bricks and mortar' establishments to the web, governments are tempted to levy taxes on such transactions in order to 'level the playing field'.\n\nHowever, opponents of an internet tax claim that such a move would cripple the hi-tech economy and do enormous harm to the country's competitiveness.",
+    "Jury Trial" : "The right to be tried by ordinary members of the public rather than a judge is seen as a fundamental human right by many liberals.\n\nConservatives argue that such a process is expensive, time wasting and is no fairer than a judge or a group of magistrates.\n\nIts entirely possible to have a system where a jury trial is reserved for more serious offences, with minor trials presided over by a magistrate.",
+    "Labor Laws" : "Labor laws are basically restrictions on a worker's right to strike.\n\nCapitalists argue that such restrictions are vital to prevent key workers such as power station workers, policemen and train drivers from holding the country to ransom.\n\nTrade unionists consider the right to strike to be fundamental and not open to negotiation.",
+    "Legal Aid" : "Not everyone has the money to pay a lawyer to defend themselves in court.\n\nAlthough a citizen could theoretically defend himself, providing state-employed lawyers should make for a fairer system.\n\nOn the other hand, this is basically a big subsidy to people who have already been charged with a crime but remember they are innocent until proved guilty.",
+    "Legalize Prostitution" : "Conservatives claim that the legalization of prostitution would mark a severe decline in family values.\n\nOthers claim that as prostitution is unlikely to disappear, even if illegal, it's better for society and prostitutes that the practice is regulated and monitored rather than criminalized.",
+    "Luxury Goods Tax" : "A tax aimed specifically at the high spenders in our society.\n\nA surcharge is added to high value luxuries such as sports cars, private yachts etc.\n\nAlthough it is never a vast source of income, a luxury goods tax can be popular with those people concerned with the gap between rich and poor.\n\nA luxury goods tax could encourage high earners to live and work elsewhere.",
+    "Married Tax Allowance" : "This is a tax break for married couples, given as an encouragement for people to marry and also to stick together.\n\nChurch groups see it as essential that the state encourages traditional family values.\n\nSome see it as religion meddling in the tax system for no good reason.",
+    "Maternity Leave" : "To some people, ensuring that mothers have a right to maternity leave and to return to their jobs afterwards is a sign of a civilized society, and one that encourages women to work.\n\nSome small businesses are concerned that it can put an unpredictable and even potentially crippling burden on an employer, especially where the number of employees is small.\n\nIt could be argued that this actually encourages employers not to employ women.",
+    "Micro-Generation Grants" : "These grants are given to citizens to help subsidize the cost of energy micro-generation systems such as solar panels and wind turbines.\n\nThis is a good way to take advantage of some people's desire to make a personal step towards cleaner and greener energy, and will increase the country's overall energy efficiency.",
+    "Military Spending" : "A modern, well equipped military can cost an absolute fortune, and many people feel that the money could best be spent elsewhere.\n\nOthers (especially patriots) would argue that you cannot put a price on freedom and security, and also point out the huge benefits for our businesses, technology and employment figures.",
+    "National Monorail System" : "Monorails are often seen as the transport system of the future. They are promoted as being fast, reliable and environmentally beneficial.\n\nThe main problem however is the high cost.\n\nThe construction time is also a major consideration so investment in a national network would take a long time to give an eventually good payoff.",
+    "Mortgage Tax Relief" : "This allows people to claim tax relief on the interest payments they have to make when they borrow money to buy a house.\n\nThis helps homebuyers to afford their mortgage payments, but can be resented by those who are not in a position to buy a house, as it is effectively a tax break for homebuyers.",
+    "Narcotics" : "Should drugs such as cannabis and heroin be legalized?\n\nSupporters suggest that it is the crime associated with the buying black-market drugs that cause problems, and legalizing narcotics would reduce crime.\n\nOpponents point to the health risks and say it would be giving into criminals.",
+    "National Service" : "Compulsory military service for some citizens where they are taught the basics of how to defend this country from attack has some benefits.\n\nFor example it would allow us to have a smaller regular army.\n\nHowever, there are concerns about forcing people to bear arms against their will.",
+    "Organ Donation" : "There are few who would disagree that organ transplant is an amazing technology but it requires a plentiful supply of donors.\n\nSadly many people do not give the topic consideration.\n\nSome suggest that an 'opt-out' policy is best, with consent for donation assumed unless otherwise stated.\n\nOthers suggest that this is no place for the state to interfere and explicit permission should be requested.",
+    "Organic Farming Subsidy" : "Supporters of organic farming say the state should subsidize this method of farming because of the perceived health benefits of food without artificial flavorings and additives.\n\nNaturally this is popular with farmers and environmentalists, but some people see it as a pointless distortion of what should be a free market.",
+    "Petrol Tax" : "Taxing fuel can be a huge source of income for a government, and can also be seen as a 'green' policy by encouraging people to drive less, or to use more fuel efficient cars.\n\nCritics suggest that this is just another cynical tax on the motorist, and some complain that the alternative (public transport) is not a viable option for everyone.",
+    "Wire Tapping" : "From a law and order perspective, wire tapping is an essential weapon in the fight against organized crime and terrorism.\n\nThe problem is that it's difficult to prevent misuse of such a system, and liberals are keen to point out how widespread wire tapping is a very sinister sign of a police state.",
+    "Plastic Bag Tax" : "Plastic bags, unlike paper ones are not biodegradable so can last more or less forever, eventually ending up in huge unsightly landfill sites.\n\nA tax on bags discourages their use and encourages people to re-use stronger, more environmentally friendly alternatives.\n\nCapitalists just see this as the state meddling.",
+    "Police Force" : "Every government needs to employ a police force to ensure order is kept and laws are obeyed, but it's a matter of debate exactly how much should be spent on the police.\n\nSome favor a large force with police on every street corner, other prefer a more low-key and tolerant approach.",
+    "Pollution Controls" : "Restrictions on what chemicals and emissions can be released into the atmosphere.\n\nControls reduce pollution and increase health, possibly at the cost of economic competitiveness.",
+    "Prisoner Tagging" : "A high tech alternative to incarceration that allows people to re-integrate with the community upon release from prison, whilst allowing law enforcement authorities to keep a close eye on them.\n\nLiberals have concerns that such a system is a step towards a police state which monitors our every move.",
+    "Prisons" : "Some argue that providing the minimum number of bare, cold cells is the only provision that needs to be made for those who have broken the law.\n\nOthers suggest that spending more money allows for prisoners to be rehabilitated as well as punished and reduces the chances of reoffending.",
+    "Property Tax" : "Property tax is a tax levied on the value of homes. The valuation is often made by a government body, and the money is used to fund local government services (at least in part) such as the provision of street lighting and emergency services.\n\nSome see it as a fair tax which mostly affects those who own large homes and are wealthy, others see it as an unfair tax on retired people with large homes but little actual income.",
+    "Public Libraries" : "Public libraries provide a number of services:, acting as a focus for communities, providing access to information and literature to those on low incomes, and enabling people to learn new skills outside the normal educational establishment."
+    }   
 
 # sliders
 NAME_LISTS = ("Australia", "Canada", "France", "Germany", "UK", "USA")
@@ -82,6 +112,20 @@ DETENTION_SLIDER = ("None", "72 hours", "7 days", "30 days", "90 days", "Unlimit
 GAMBLING_SLIDER = ("None", "Age and stakes limited", "No stakes limit", "No restrictions")
 HANDGUN_SLIDER = ("No limit", "No machineguns", "No automatics", "Licence required", "Licence & min age", "Strict controls", "Total ban")
 ID_SLIDER = ("Voluntary", "Widespread", "Compulsory", "Biometric", "Heavily enforced")
+INTEL_SLIDER = ("A few spies", "Small spy agency", "Sizeable spy agency", "High tech spy service", "Spy satellite network")
+INTERNET_CENSORSHIP_SLIDER = ("None", "In extreme cases", "On police request", "Some sites blocked", "All traffic monitored")
+JURY_TRIAL_SLIDER = ("None", "In exceptional cases", "In serious cases", "If requested", "Widespread", "Universal")
+LABOR_LAW_SLIDER = ("Pro-employer", "Balanced", "Pro-union")
+MARRIED_TAX_SLIDER = ("None", "Small", "Advantageous", "Incentive")
+MATERNITY_SLIDER = ("None", "Quarter pay", "Half pay", "Three quarters pay", "Full pay", "Full & paternity leave")
+MILITARY_SLIDER = ("Ceremonial only", "Reservists", "Light defensive", "Well trained", "Highly trained", "Overwhelming force")
+NARCOTICS_SLIDER = ("Outlawed", "Legalised cannabis", "Legal LSD", "Leagalise all drugs")
+NATIONAL_SERVICE_SLIDER = ("None", "Basic training", "3 months service", "6 months service", "1 year service", "Periodic service")
+ORGAN_SLIDER = ("By request", "Next of kin approved", "Presumed consent", "No opt-out")
+WIRE_TAP_SLIDER = ("None", "Gov't decree", "Judicial order", "Police chief consent", "Police request", "Widespread use", "Universal monitoring")
+POLLUTION_SLIDER = ("None", "Minimal monitoring", "Extensive monitoring", "Gov't targets", "Restrictions and fines", "Major fines")
+PRISON_SLIDER = ("Overcrowded cells", "Shared cells", "Basic provisions", "Some re-education", "Extensive rehab.")
+
 
 
 
@@ -437,8 +481,176 @@ flat_income_tax_sb.grid(row=15, column=3, sticky=W, padx=5)
 # Capital Gains Tax
 Button(policies_fr, text="Capital Gains Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Capital Gains Tax"))\
     .grid(row=16, column=2, sticky=W, padx=5)
-flat_income_tax_sb = Spinbox(policies_fr, from_=0, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+flat_income_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
 flat_income_tax_sb.grid(row=16, column=3, sticky=W, padx=5)
+
+# Inheritance Tax
+Button(policies_fr, text="Inheritance Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Inheritance Tax"))\
+    .grid(row=17, column=2, sticky=W, padx=5)
+inheritance_tax_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+inheritance_tax_sb.grid(row=17, column=3, sticky=W, padx=5)
+
+# Intelligence Services
+Button(policies_fr, text="Intelligence Services", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Intelligence Services"))\
+    .grid(row=18, column=2, sticky=W, padx=5)
+intel_sb = Spinbox(policies_fr, values=INTEL_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+intel_sb.grid(row=18, column=3, sticky=W, padx=5)
+
+# Internet Censorship
+Button(policies_fr, text="Internet Censorship", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Internet Censorship"))\
+    .grid(row=19, column=2, sticky=W, padx=5)
+internet_censorship_sb = Spinbox(policies_fr, values=INTERNET_CENSORSHIP_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+internet_censorship_sb.grid(row=19, column=3, sticky=W, padx=5)
+
+# Internet Tax
+Button(policies_fr, text="Internet Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Internet Tax"))\
+    .grid(row=20, column=2, sticky=W, padx=5)
+internet_tax_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+internet_tax_sb.grid(row=20, column=3, sticky=W, padx=5)
+
+# Jury Trial
+Button(policies_fr, text="Jury Trial", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Jury Trial"))\
+    .grid(row=21, column=2, sticky=W, padx=5)
+jury_trial_sb = Spinbox(policies_fr, values=JURY_TRIAL_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+jury_trial_sb.grid(row=21, column=3, sticky=W, padx=5)
+
+# Labor Laws
+Button(policies_fr, text="Labor Laws", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Labor Laws"))\
+    .grid(row=22, column=2, sticky=W, padx=5)
+labor_laws_sb = Spinbox(policies_fr, values=LABOR_LAW_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+labor_laws_sb.grid(row=22, column=3, sticky=W, padx=5)
+
+# Legal Aid
+Button(policies_fr, text="Legal Aid", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Legal Aid"))\
+    .grid(row=23, column=2, sticky=W, padx=5)
+legal_aid_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+legal_aid_sb.grid(row=23, column=3, sticky=W, padx=5)
+
+# Legalize Prostitution
+Button(policies_fr, text="Legalize Prostitution", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Legalize Prostitution"))\
+    .grid(row=24, column=2, sticky=W, padx=5)
+prostitution_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+prostitution_sb.grid(row=24, column=3, sticky=W, padx=5)
+
+# Luxury Goods Tax
+Button(policies_fr, text="Luxury Goods Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Luxury Goods Tax"))\
+    .grid(row=0, column=4, sticky=W, padx=5)
+luxary_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+luxary_tax_sb.grid(row=0, column=5, sticky=W, padx=5)
+
+# Married Tax Allowance
+Button(policies_fr, text="Married Tax Allowance", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Married Tax Allowance"))\
+    .grid(row=1, column=4, sticky=W, padx=5)
+married_tax_sb = Spinbox(policies_fr, values=MARRIED_TAX_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+married_tax_sb.grid(row=1, column=5, sticky=W, padx=5)
+
+# Maternity Leave
+Button(policies_fr, text="Maternity Leave", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Maternity Leave"))\
+    .grid(row=2, column=4, sticky=W, padx=5)
+maternity_sb = Spinbox(policies_fr, values=MATERNITY_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+maternity_sb.grid(row=2, column=5, sticky=W, padx=5)
+
+# Micro-Generation Grants
+Button(policies_fr, text="Micro-Generation Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Micro-Generation Grants"))\
+    .grid(row=3, column=4, sticky=W, padx=5)
+microgen_grants_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+microgen_grants_sb.grid(row=3, column=5, sticky=W, padx=5)
+
+# Military Spending
+Button(policies_fr, text="Military Spending", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Military Spending"))\
+    .grid(row=4, column=4, sticky=W, padx=5)
+military_sb = Spinbox(policies_fr, values=MILITARY_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+military_sb.grid(row=4, column=5, sticky=W, padx=5)
+
+# National Monorail System
+Button(policies_fr, text="National Monorail System", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("National Monorail System"))\
+    .grid(row=5, column=4, sticky=W, padx=5)
+monorail_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+monorail_sb.grid(row=5, column=5, sticky=W, padx=5)
+
+# Mortgage Tax Relief
+Button(policies_fr, text="Mortgage Tax Relief", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Mortgage Tax Relief"))\
+    .grid(row=6, column=4, sticky=W, padx=5)
+mortgage_relief_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+mortgage_relief_sb.grid(row=6, column=5, sticky=W, padx=5)
+
+# Narcotics
+Button(policies_fr, text="Narcotics", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Narcotics"))\
+    .grid(row=7, column=4, sticky=W, padx=5)
+narcotics_sb = Spinbox(policies_fr, values=NARCOTICS_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+narcotics_sb.grid(row=7, column=5, sticky=W, padx=5)
+
+# National Service
+Button(policies_fr, text="National Service", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("National Service"))\
+    .grid(row=8, column=4, sticky=W, padx=5)
+national_service_sb = Spinbox(policies_fr, values=NATIONAL_SERVICE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+national_service_sb.grid(row=8, column=5, sticky=W, padx=5)
+
+# Organ Donation
+Button(policies_fr, text="Organ Donation", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Organ Donation"))\
+    .grid(row=9, column=4, sticky=W, padx=5)
+organ_donor_sb = Spinbox(policies_fr, values=ORGAN_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+organ_donor_sb.grid(row=9, column=5, sticky=W, padx=5)
+
+# Organic Farming Subsidy
+Button(policies_fr, text="Organic Farming Subsidy", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Organic Farming Subsidy"))\
+    .grid(row=10, column=4, sticky=W, padx=5)
+organic_farm_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+organic_farm_sb.grid(row=10, column=5, sticky=W, padx=5)
+
+# Petrol Tax
+Button(policies_fr, text="Petrol Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Petrol Tax"))\
+    .grid(row=11, column=4, sticky=W, padx=5)
+petrol_tax_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+petrol_tax_sb.grid(row=11, column=5, sticky=W, padx=5)
+
+# Wire Tapping
+Button(policies_fr, text="Wire Tapping", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Wire Tapping"))\
+    .grid(row=12, column=4, sticky=W, padx=5)
+wire_tapping_sb = Spinbox(policies_fr, values=WIRE_TAP_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+wire_tapping_sb.grid(row=12, column=5, sticky=W, padx=5)
+
+# Plastic Bag Tax
+Button(policies_fr, text="Plastic Bag Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Plastic Bag Tax"))\
+    .grid(row=13, column=4, sticky=W, padx=5)
+plas_bag_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+plas_bag_sb.grid(row=13, column=5, sticky=W, padx=5)
+
+# Police Force (compulsoray)
+Button(policies_fr, text="Police Force", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Police Force"))\
+    .grid(row=14, column=4, sticky=W, padx=5)
+police_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+police_sb.grid(row=14, column=5, sticky=W, padx=5)
+
+# Pollution Controls
+Button(policies_fr, text="Pollution Controls", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Pollution Controls"))\
+    .grid(row=15, column=4, sticky=W, padx=5)
+pollution_sb = Spinbox(policies_fr, values=POLLUTION_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+pollution_sb.grid(row=15, column=5, sticky=W, padx=5)
+
+# Prisoner Tagging
+Button(policies_fr, text="Prisoner Tagging", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Prisoner Tagging"))\
+    .grid(row=16, column=4, sticky=W, padx=5)
+pris_tag_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+pris_tag_sb.grid(row=16, column=5, sticky=W, padx=5)
+
+# Prisons
+Button(policies_fr, text="Prisons", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Prisons"))\
+    .grid(row=17, column=4, sticky=W, padx=5)
+prisons_sb = Spinbox(policies_fr, values=PRISON_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+prisons_sb.grid(row=17, column=5, sticky=W, padx=5)
+
+# Property Tax
+Button(policies_fr, text="Property Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Property Tax"))\
+    .grid(row=18, column=4, sticky=W, padx=5)
+prop_tax_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+prop_tax_sb.grid(row=18, column=5, sticky=W, padx=5)
+
+# Public Libraries
+Button(policies_fr, text="Public Libraries", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Public Libraries"))\
+    .grid(row=19, column=4, sticky=W, padx=5)
+libraries_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+libraries_sb.grid(row=19, column=5, sticky=W, padx=5)
 
 
 
