@@ -428,6 +428,17 @@ Button(policies_fr, text="Income Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief
 income_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
 income_tax_sb.grid(row=14, column=3, sticky=W, padx=5)
 
+# Flat Income Tax
+Button(policies_fr, text="Flat Income Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Flat Income Tax"))\
+    .grid(row=15, column=2, sticky=W, padx=5)
+flat_income_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+flat_income_tax_sb.grid(row=15, column=3, sticky=W, padx=5)
+
+# Capital Gains Tax
+Button(policies_fr, text="Capital Gains Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Capital Gains Tax"))\
+    .grid(row=16, column=2, sticky=W, padx=5)
+flat_income_tax_sb = Spinbox(policies_fr, from_=0, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+flat_income_tax_sb.grid(row=16, column=3, sticky=W, padx=5)
 
 
 
