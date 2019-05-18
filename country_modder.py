@@ -94,7 +94,20 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Prisoner Tagging" : "A high tech alternative to incarceration that allows people to re-integrate with the community upon release from prison, whilst allowing law enforcement authorities to keep a close eye on them.\n\nLiberals have concerns that such a system is a step towards a police state which monitors our every move.",
     "Prisons" : "Some argue that providing the minimum number of bare, cold cells is the only provision that needs to be made for those who have broken the law.\n\nOthers suggest that spending more money allows for prisoners to be rehabilitated as well as punished and reduces the chances of reoffending.",
     "Property Tax" : "Property tax is a tax levied on the value of homes. The valuation is often made by a government body, and the money is used to fund local government services (at least in part) such as the provision of street lighting and emergency services.\n\nSome see it as a fair tax which mostly affects those who own large homes and are wealthy, others see it as an unfair tax on retired people with large homes but little actual income.",
-    "Public Libraries" : "Public libraries provide a number of services:, acting as a focus for communities, providing access to information and literature to those on low incomes, and enabling people to learn new skills outside the normal educational establishment."
+    "Public Libraries" : "Public libraries provide a number of services:, acting as a focus for communities, providing access to information and literature to those on low incomes, and enabling people to learn new skills outside the normal educational establishment.",
+    "Racial Profiling" : "Racial (or ethnic) profiling is the practice of using race as a factor in identifying criminals and potential criminals.\n\nLaw enforcement officials claim that using racial profiling allows them to quickly narrow down lists of potential suspects, and to best concentrate their efforts but opponents fear that it leads to racial discrimination by the police.",
+    "Race Discrimination Act" : "Prevents citizens being discriminated against purely on the basis of race, i.e. racist employment practices etc.",
+    "Rail Subsidies" : "Travelling by rail is not only more environmentally sound than car travel, its much more efficient in terms of transport times and congestion.\n\nOf course that requires adequate investment over the very long term, and in the meantime, motorists take offence at subsidizing a system they do not use.\n\nIt can take several years for the effects of rail investment to take effect.",
+    "Recycling" : "Supporters of recycling argue that dumping waste in landfills just isn't a long term solution, and the government needs to show the way by providing facilities to recycle as many waste materials as possible.\n\nThis might include recycling newspapers, cardboard, bottles and even some plastics.",
+    "Road Building" : "Although environmentalists often argue that more roads just lead to more congestion, not surprisingly this isn't how the motorist who is sat in traffic sees it.\n\nBuilding new roads is a very expensive and very slow process, but some suggest its vital to keep our economy functioning.",
+    "Rural Development" : "As technology advances and more and more citizens take jobs in our cities, there is a danger that poverty and unemployment will rise to unacceptable levels in the countryside.\n\nRural development grants do distort the free market, but they also support rural businesses and prevent poverty amongst farmers and other rural occupations.",
+    "Sales Tax" : "Sales tax is the classic 'regressive' tax, which means it does not take into account the ability to pay.\n\nCritics argue that this affects the poor disproportionately and thus increases inequality.\n\nSupporters argue that it is relatively easy to collect and affects everyone, and is thus fair.\n\nBusinesses can be opposed to the administrative burden of the tax.",
+    "Satellite Road Pricing" : "An expensive system that requires transponders to be fitted to everyone's car and keeps track of what roads people use (and when).\n\nAllows per-road pricing for car usage which gives local authorities fine control over reducing congestion without burdening motorists in more remote rural areas who have no alternative transport system.",
+    "Subsidized School Buses" : "State subsidies for school buses ensure that every school kid has an efficient, and safe journey to school, whilst reducing the number of short 'school-run' trips carried out by parents, thus reducing traffic on the roads.\n\nParents are also happier knowing that there are proper approved school buses.",
+    "School Prayers" : "Liberals will often argue that the education of our younger citizens should be kept entirely separate from any religious teachings.\n\nOn the other hand, it's argued that some compulsory prayer in schools is a way of promoting moral values in our children.",
+    "Science Funding" : "In some countries, the majority of research is funded by private companies.\n\nState-sponsored science can be useful for investing in very long-term research projects or those that may not be commercially rewarding.\n\nThe benefits of state sector research are freely available to the entire population, rather than patented by corporations.",
+    "Small Business Grants" : "The failure rate for small businesses is very high.\n\nIn the early years of trading, a preferential government grant can be an enormous help to get a new enterprise off the ground.\n\nThis can lead to a big boost to the economy, but it can also be an expensive policy with no guarantee of good results.",
+    "Space Program" : "Invest in your country's efforts to explore space!\n\nAs well as the purely scientific benefits, a well-funded space program will boost the level of technological expertise throughout the entire economy.\n\nIt will also unite the country and encourage patriotism."
     }   
 
 # sliders
@@ -125,6 +138,12 @@ ORGAN_SLIDER = ("By request", "Next of kin approved", "Presumed consent", "No op
 WIRE_TAP_SLIDER = ("None", "Gov't decree", "Judicial order", "Police chief consent", "Police request", "Widespread use", "Universal monitoring")
 POLLUTION_SLIDER = ("None", "Minimal monitoring", "Extensive monitoring", "Gov't targets", "Restrictions and fines", "Major fines")
 PRISON_SLIDER = ("Overcrowded cells", "Shared cells", "Basic provisions", "Some re-education", "Extensive rehab.")
+RECYCLING_SLIDER = ("None","Poster campaign", "Bottle Banks", "Recycling centers", "Limited doorstep collection", "Universal doorstep collection")
+ROAD_SLIDER = ("Essential maintenance", "Basic maintenance", "Existing roads fixed", "Some expansion", "Major expansion", "New road networks")
+PRAYER_SLIDER = ("None", "Parental request", "Optional", "Once weekly", "Daily", "Twice daily")
+SCIENCE_SLIDER = ("Test-tubes", "Microscopes", "Electron microscope", "Particle accelerators")
+SPACE_SLIDER = ("None", "Telescope", "Big telescopes", "Arrays of telescopes", "Satellites", "Unmanned probes", "Reusable shuttle", "Space stations")
+
 
 
 
@@ -652,7 +671,83 @@ Button(policies_fr, text="Public Libraries", bg=BG_COLOUR, font=BODY, anchor=W, 
 libraries_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 libraries_sb.grid(row=19, column=5, sticky=W, padx=5)
 
+# Racial Profiling
+Button(policies_fr, text="Racial Profiling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Racial Profiling"))\
+    .grid(row=20, column=4, sticky=W, padx=5)
+profiling_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+profiling_sb.grid(row=20, column=5, sticky=W, padx=5)
 
+# Race Discrimination Act
+Button(policies_fr, text="Race Discrimination Act", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Race Discrimination Act"))\
+    .grid(row=21, column=4, sticky=W, padx=5)
+discrimination_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+discrimination_sb.grid(row=21, column=5, sticky=W, padx=5)
+
+# Rail Subsidies
+Button(policies_fr, text="Rail Subsidies", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Rail Subsidies"))\
+    .grid(row=22, column=4, sticky=W, padx=5)
+discrimination_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+discrimination_sb.grid(row=22, column=5, sticky=W, padx=5)
+
+# Recycling
+Button(policies_fr, text="Recycling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Recycling"))\
+    .grid(row=23, column=4, sticky=W, padx=5)
+recycling_sb = Spinbox(policies_fr, values=RECYCLING_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+recycling_sb.grid(row=23, column=5, sticky=W, padx=5)
+
+# Road Building
+Button(policies_fr, text="Road Building", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Road Building"))\
+    .grid(row=24, column=4, sticky=W, padx=5)
+roads_sb = Spinbox(policies_fr, values=ROAD_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+roads_sb.grid(row=24, column=5, sticky=W, padx=5)
+
+# Rural Development Grants
+Button(policies_fr, text="Rural Development", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Rural Development"))\
+    .grid(row=25, column=4, sticky=W, padx=5)
+rural_dev_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+rural_dev_sb.grid(row=25, column=5, sticky=W, padx=5)
+
+# Sales Tax
+Button(policies_fr, text="Sales Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Sales Tax"))\
+    .grid(row=0, column=6, sticky=W, padx=5)
+sales_tax_sb = Spinbox(policies_fr, from_=0, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+sales_tax_sb.grid(row=0, column=7, sticky=W, padx=5)
+
+# Satellite Road Pricing
+Button(policies_fr, text="Satellite Road Pricing", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Satellite Road Pricing"))\
+    .grid(row=1, column=6, sticky=W, padx=5)
+sat_rd_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+sat_rd_sb.grid(row=1, column=7, sticky=W, padx=5)
+
+# Subsidized School Buses
+Button(policies_fr, text="Subsidized School Buses", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Subsidized School Buses"))\
+    .grid(row=2, column=6, sticky=W, padx=5)
+sub_sch_bus_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+sub_sch_bus_sb.grid(row=2, column=7, sticky=W, padx=5)
+
+# School Prayers
+Button(policies_fr, text="School Prayers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("School Prayers"))\
+    .grid(row=3, column=6, sticky=W, padx=5)
+prayer_sb = Spinbox(policies_fr, values=PRAYER_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+prayer_sb.grid(row=3, column=7, sticky=W, padx=5)
+
+# Science Funding
+Button(policies_fr, text="Science Funding", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Science Funding"))\
+    .grid(row=4, column=6, sticky=W, padx=5)
+science_sb = Spinbox(policies_fr, values=SCIENCE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+science_sb.grid(row=4, column=7, sticky=W, padx=5)
+
+# Small Business Grants
+Button(policies_fr, text="Small Business Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Small Business Grants"))\
+    .grid(row=5, column=6, sticky=W, padx=5)
+bus_grant_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+bus_grant_sb.grid(row=5, column=7, sticky=W, padx=5)
+
+# Space Program
+Button(policies_fr, text="Space Program", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Space Program"))\
+    .grid(row=6, column=6, sticky=W, padx=5)
+bus_grant_sb = Spinbox(policies_fr, values=SPACE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+bus_grant_sb.grid(row=6, column=7, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
