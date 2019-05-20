@@ -107,7 +107,11 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "School Prayers" : "Liberals will often argue that the education of our younger citizens should be kept entirely separate from any religious teachings.\n\nOn the other hand, it's argued that some compulsory prayer in schools is a way of promoting moral values in our children.",
     "Science Funding" : "In some countries, the majority of research is funded by private companies.\n\nState-sponsored science can be useful for investing in very long-term research projects or those that may not be commercially rewarding.\n\nThe benefits of state sector research are freely available to the entire population, rather than patented by corporations.",
     "Small Business Grants" : "The failure rate for small businesses is very high.\n\nIn the early years of trading, a preferential government grant can be an enormous help to get a new enterprise off the ground.\n\nThis can lead to a big boost to the economy, but it can also be an expensive policy with no guarantee of good results.",
-    "Space Program" : "Invest in your country's efforts to explore space!\n\nAs well as the purely scientific benefits, a well-funded space program will boost the level of technological expertise throughout the entire economy.\n\nIt will also unite the country and encourage patriotism."
+    "Space Program" : "Invest in your country's efforts to explore space!\n\nAs well as the purely scientific benefits, a well-funded space program will boost the level of technological expertise throughout the entire economy.\n\nIt will also unite the country and encourage patriotism.",
+    "Speed Cameras" : "Speed cameras are an automated way to enforce speed restrictions on our roads, without having to invest a fortune in extra traffic police.\n\nSupporters claim they reduce road deaths and free up the police to deal with more serious crime, opponents claim they are a cynical way of taxing the motorist and have nothing to do with safety",
+    "State Health Service" : "Although many citizens would be happy to pay privately for their own health treatment, there is an argument that the state has a duty to provide a minimum level of free health treatment for everyone regardless of income.\n\nHealth provision can be expensive, so it's a matter of debate as to how much should be spent.",
+    "State Housing" : "Some citizens prefer to own their own homes, but the cost of housing is such that a large proportion of the population live in rented accommodation.\n\nState housing is provided, at a reduced rate, to those who cannot afford to pay the market rate.\n\nThis can be expensive to fund, but the social benefits are also significant.",
+    "State Pensions" : "Rather than leave it up to the individual to provide for themselves after retirement, state pensions can guarantee a minimum standard of living for the elderly.\n\nBe aware that as life expectancy rises, the cost to the state of paying out pensions increases hugely.\n\nThe level of state pension may encourage or discourage citizens to save into private pension plans."
     }   
 
 # sliders
@@ -143,6 +147,11 @@ ROAD_SLIDER = ("Essential maintenance", "Basic maintenance", "Existing roads fix
 PRAYER_SLIDER = ("None", "Parental request", "Optional", "Once weekly", "Daily", "Twice daily")
 SCIENCE_SLIDER = ("Test-tubes", "Microscopes", "Electron microscope", "Particle accelerators")
 SPACE_SLIDER = ("None", "Telescope", "Big telescopes", "Arrays of telescopes", "Satellites", "Unmanned probes", "Reusable shuttle", "Space stations")
+SPEED_SLIDER = ("Trials", "Accident hotspots", "Outside Schools", "Residential areas", "Widespread", "Everywhere")
+HEALTH_SLIDER = ("Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent")
+
+
+
 
 
 
@@ -740,14 +749,38 @@ science_sb.grid(row=4, column=7, sticky=W, padx=5)
 # Small Business Grants
 Button(policies_fr, text="Small Business Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Small Business Grants"))\
     .grid(row=5, column=6, sticky=W, padx=5)
-bus_grant_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-bus_grant_sb.grid(row=5, column=7, sticky=W, padx=5)
+small_business_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+small_business_sb.grid(row=5, column=7, sticky=W, padx=5)
 
 # Space Program
 Button(policies_fr, text="Space Program", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Space Program"))\
     .grid(row=6, column=6, sticky=W, padx=5)
-bus_grant_sb = Spinbox(policies_fr, values=SPACE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-bus_grant_sb.grid(row=6, column=7, sticky=W, padx=5)
+space_sb = Spinbox(policies_fr, values=SPACE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+space_sb.grid(row=6, column=7, sticky=W, padx=5)
+
+# Speed Cameras
+Button(policies_fr, text="Speed Cameras", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Speed Cameras"))\
+    .grid(row=7, column=6, sticky=W, padx=5)
+speed_sb = Spinbox(policies_fr, values=SPEED_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+speed_sb.grid(row=7, column=7, sticky=W, padx=5)
+
+#  State Health Service
+Button(policies_fr, text="State Health Service", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Health Service"))\
+    .grid(row=8, column=6, sticky=W, padx=5)
+health_sb = Spinbox(policies_fr, values=HEALTH_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+health_sb.grid(row=8, column=7, sticky=W, padx=5)
+
+# State Housing
+Button(policies_fr, text="State Housing", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Housing"))\
+    .grid(row=9, column=6, sticky=W, padx=5)
+housing_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+housing_sb.grid(row=9, column=7, sticky=W, padx=5)
+
+# State Pensions
+Button(policies_fr, text="State Pensions", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Pensions"))\
+    .grid(row=10, column=6, sticky=W, padx=5)
+pension_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+pension_sb.grid(row=10, column=7, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
