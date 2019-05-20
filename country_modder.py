@@ -10,7 +10,7 @@ BG_COLOUR = "light grey"
 ENTRY_COLOUR = "white"
 HEADING_1 = ("Arial",16)
 HEADING_2 = ("Arial",12)
-BODY = ("Arial",9)
+BODY = ("Arial",8)
 SB_WIDTH = 17
 
 INFO = {"Country Name" : "The common name of the country.\nFor example, Australia.",
@@ -103,7 +103,7 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Rural Development" : "As technology advances and more and more citizens take jobs in our cities, there is a danger that poverty and unemployment will rise to unacceptable levels in the countryside.\n\nRural development grants do distort the free market, but they also support rural businesses and prevent poverty amongst farmers and other rural occupations.",
     "Sales Tax" : "Sales tax is the classic 'regressive' tax, which means it does not take into account the ability to pay.\n\nCritics argue that this affects the poor disproportionately and thus increases inequality.\n\nSupporters argue that it is relatively easy to collect and affects everyone, and is thus fair.\n\nBusinesses can be opposed to the administrative burden of the tax.",
     "Satellite Road Pricing" : "An expensive system that requires transponders to be fitted to everyone's car and keeps track of what roads people use (and when).\n\nAllows per-road pricing for car usage which gives local authorities fine control over reducing congestion without burdening motorists in more remote rural areas who have no alternative transport system.",
-    "Subsidized School Buses" : "State subsidies for school buses ensure that every school kid has an efficient, and safe journey to school, whilst reducing the number of short 'school-run' trips carried out by parents, thus reducing traffic on the roads.\n\nParents are also happier knowing that there are proper approved school buses.",
+    "Sub. School Bus" : "State subsidies for school buses ensure that every school kid has an efficient, and safe journey to school, whilst reducing the number of short 'school-run' trips carried out by parents, thus reducing traffic on the roads.\n\nParents are also happier knowing that there are proper approved school buses.",
     "School Prayers" : "Liberals will often argue that the education of our younger citizens should be kept entirely separate from any religious teachings.\n\nOn the other hand, it's argued that some compulsory prayer in schools is a way of promoting moral values in our children.",
     "Science Funding" : "In some countries, the majority of research is funded by private companies.\n\nState-sponsored science can be useful for investing in very long-term research projects or those that may not be commercially rewarding.\n\nThe benefits of state sector research are freely available to the entire population, rather than patented by corporations.",
     "Small Business Grants" : "The failure rate for small businesses is very high.\n\nIn the early years of trading, a preferential government grant can be an enormous help to get a new enterprise off the ground.\n\nThis can lead to a big boost to the economy, but it can also be an expensive policy with no guarantee of good results.",
@@ -111,7 +111,15 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Speed Cameras" : "Speed cameras are an automated way to enforce speed restrictions on our roads, without having to invest a fortune in extra traffic police.\n\nSupporters claim they reduce road deaths and free up the police to deal with more serious crime, opponents claim they are a cynical way of taxing the motorist and have nothing to do with safety",
     "State Health Service" : "Although many citizens would be happy to pay privately for their own health treatment, there is an argument that the state has a duty to provide a minimum level of free health treatment for everyone regardless of income.\n\nHealth provision can be expensive, so it's a matter of debate as to how much should be spent.",
     "State Housing" : "Some citizens prefer to own their own homes, but the cost of housing is such that a large proportion of the population live in rented accommodation.\n\nState housing is provided, at a reduced rate, to those who cannot afford to pay the market rate.\n\nThis can be expensive to fund, but the social benefits are also significant.",
-    "State Pensions" : "Rather than leave it up to the individual to provide for themselves after retirement, state pensions can guarantee a minimum standard of living for the elderly.\n\nBe aware that as life expectancy rises, the cost to the state of paying out pensions increases hugely.\n\nThe level of state pension may encourage or discourage citizens to save into private pension plans."
+    "State Pensions" : "Rather than leave it up to the individual to provide for themselves after retirement, state pensions can guarantee a minimum standard of living for the elderly.\n\nBe aware that as life expectancy rises, the cost to the state of paying out pensions increases hugely.\n\nThe level of state pension may encourage or discourage citizens to save into private pension plans.",
+    "State Schools" : "Free education for all ensures high levels of literacy and can be beneficial to the economy, especially those parts of the economy requiring a skilled workforce.\n\nThe flipside of this is that state education can be expensive for the government.\n\nWealthy individuals, not making use of state schools, may resent subsidizing them.",
+    "Stem Cell Research" : "A stem cell is a primitive type of cell that can be developed into most of the types of cells found in the human body.\n\nSome scientists claim that stem cell research offers great hope for curing diseases such as diabetes and multiple sclerosis.\n\nHowever, because stem cells are taken from discarded human embryos, many 'pro-life' and religious groups oppose their usage.",
+    "Tax Shelters" : "By not fully taxing the wealth of the super-rich, tax shelters can be a great way to encourage successful entrepreneurs to make our country their home.\n\nWith an ever-shrinking world, the rich are free to settle wherever they please.\n\nEncouraging them to live here may mean that they spend their wealth in this country.\n\nSuch measures can be very unpopular with the poor, who resent paying tax on their much lower earnings.",
+    "Technology Colleges" : "Technology colleges are 'specialist schools' with a focus on computer literacy, biotechnology and similar subjects.\n\nThese state-run colleges receive special funding from central government in order to encourage a greater level of technological literacy amongst the future workforce.",
+    "Technology Grants" : "The government can provide state funding to encourage business to invest in new and exciting technologies.\n\nAlthough this helps give us a competitive advantage and can create jobs, it can be argued that its an unnecessary distortion of the market.",
+    "Telecommuting" : "Telecommuting, or 'working from home' is seen as desirable because it reduces the pressure on the transport infrastructure, and can be an improvement to people's quality of life. It's also welcomed by parents.\n\nThis policy offers tax incentives to companies supporting this option.",
+    "Tobacco Tax" : "Despite the failure of tobacco companies to admit it, there is good reason to believe that smoking has negative effects on health.\n\nThis is used as a justification for taxing tobacco.\n\nCynics point out that the government benefits hugely from a tax on a product it is supposedly against.\n\nHealth campaigners encourage the tax as a way to encourage a more healthy population",
+    "Toll Roads" : "Toll roads charge motorists to use specific roads (normally major highways).\n\nThis is a great example of directly applying market forces, by only charging those who use a particular route for the construction and maintenance of that route.\n\nMotorists tend to see this as just another form of taxation, whereas commuters appreciate not being charged for roads they seldom use."
     }   
 
 # sliders
@@ -149,6 +157,7 @@ SCIENCE_SLIDER = ("Test-tubes", "Microscopes", "Electron microscope", "Particle 
 SPACE_SLIDER = ("None", "Telescope", "Big telescopes", "Arrays of telescopes", "Satellites", "Unmanned probes", "Reusable shuttle", "Space stations")
 SPEED_SLIDER = ("Trials", "Accident hotspots", "Outside Schools", "Residential areas", "Widespread", "Everywhere")
 HEALTH_SLIDER = ("Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent")
+SCHOOLS_SLIDER = ("Wooden schoolhuts", "Shared textbooks", "Modern textbooks", "Student laptops")
 
 
 
@@ -712,75 +721,123 @@ roads_sb.grid(row=24, column=5, sticky=W, padx=5)
 
 # Rural Development Grants
 Button(policies_fr, text="Rural Development", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Rural Development"))\
-    .grid(row=25, column=4, sticky=W, padx=5)
+    .grid(row=0, column=6, sticky=W, padx=5)
 rural_dev_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-rural_dev_sb.grid(row=25, column=5, sticky=W, padx=5)
+rural_dev_sb.grid(row=0, column=7, sticky=W, padx=5)
 
 # Sales Tax
 Button(policies_fr, text="Sales Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Sales Tax"))\
-    .grid(row=0, column=6, sticky=W, padx=5)
+    .grid(row=1, column=6, sticky=W, padx=5)
 sales_tax_sb = Spinbox(policies_fr, from_=0, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
-sales_tax_sb.grid(row=0, column=7, sticky=W, padx=5)
+sales_tax_sb.grid(row=1, column=7, sticky=W, padx=5)
 
 # Satellite Road Pricing
 Button(policies_fr, text="Satellite Road Pricing", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Satellite Road Pricing"))\
-    .grid(row=1, column=6, sticky=W, padx=5)
-sat_rd_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-sat_rd_sb.grid(row=1, column=7, sticky=W, padx=5)
-
-# Subsidized School Buses
-Button(policies_fr, text="Subsidized School Buses", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Subsidized School Buses"))\
     .grid(row=2, column=6, sticky=W, padx=5)
+sat_rd_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+sat_rd_sb.grid(row=2, column=7, sticky=W, padx=5)
+
+# Sub. School Bus
+Button(policies_fr, text="Sub. School Bus", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Sub. School Bus"))\
+    .grid(row=3, column=6, sticky=W, padx=5)
 sub_sch_bus_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-sub_sch_bus_sb.grid(row=2, column=7, sticky=W, padx=5)
+sub_sch_bus_sb.grid(row=3, column=7, sticky=W, padx=5)
 
 # School Prayers
 Button(policies_fr, text="School Prayers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("School Prayers"))\
-    .grid(row=3, column=6, sticky=W, padx=5)
+    .grid(row=4, column=6, sticky=W, padx=5)
 prayer_sb = Spinbox(policies_fr, values=PRAYER_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-prayer_sb.grid(row=3, column=7, sticky=W, padx=5)
+prayer_sb.grid(row=4, column=7, sticky=W, padx=5)
 
 # Science Funding
 Button(policies_fr, text="Science Funding", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Science Funding"))\
-    .grid(row=4, column=6, sticky=W, padx=5)
+    .grid(row=5, column=6, sticky=W, padx=5)
 science_sb = Spinbox(policies_fr, values=SCIENCE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-science_sb.grid(row=4, column=7, sticky=W, padx=5)
+science_sb.grid(row=5, column=7, sticky=W, padx=5)
 
 # Small Business Grants
 Button(policies_fr, text="Small Business Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Small Business Grants"))\
-    .grid(row=5, column=6, sticky=W, padx=5)
+    .grid(row=6, column=6, sticky=W, padx=5)
 small_business_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-small_business_sb.grid(row=5, column=7, sticky=W, padx=5)
+small_business_sb.grid(row=6, column=7, sticky=W, padx=5)
 
 # Space Program
 Button(policies_fr, text="Space Program", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Space Program"))\
-    .grid(row=6, column=6, sticky=W, padx=5)
+    .grid(row=7, column=6, sticky=W, padx=5)
 space_sb = Spinbox(policies_fr, values=SPACE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-space_sb.grid(row=6, column=7, sticky=W, padx=5)
+space_sb.grid(row=7, column=7, sticky=W, padx=5)
 
 # Speed Cameras
 Button(policies_fr, text="Speed Cameras", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Speed Cameras"))\
-    .grid(row=7, column=6, sticky=W, padx=5)
+    .grid(row=8, column=6, sticky=W, padx=5)
 speed_sb = Spinbox(policies_fr, values=SPEED_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-speed_sb.grid(row=7, column=7, sticky=W, padx=5)
+speed_sb.grid(row=8, column=7, sticky=W, padx=5)
 
 #  State Health Service
 Button(policies_fr, text="State Health Service", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Health Service"))\
-    .grid(row=8, column=6, sticky=W, padx=5)
+    .grid(row=9, column=6, sticky=W, padx=5)
 health_sb = Spinbox(policies_fr, values=HEALTH_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-health_sb.grid(row=8, column=7, sticky=W, padx=5)
+health_sb.grid(row=9, column=7, sticky=W, padx=5)
 
 # State Housing
 Button(policies_fr, text="State Housing", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Housing"))\
-    .grid(row=9, column=6, sticky=W, padx=5)
+    .grid(row=10, column=6, sticky=W, padx=5)
 housing_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-housing_sb.grid(row=9, column=7, sticky=W, padx=5)
+housing_sb.grid(row=10, column=7, sticky=W, padx=5)
 
 # State Pensions
 Button(policies_fr, text="State Pensions", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Pensions"))\
-    .grid(row=10, column=6, sticky=W, padx=5)
+    .grid(row=11, column=6, sticky=W, padx=5)
 pension_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-pension_sb.grid(row=10, column=7, sticky=W, padx=5)
+pension_sb.grid(row=11, column=7, sticky=W, padx=5)
+
+# State Schools
+Button(policies_fr, text="State Schools", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("State Schools"))\
+    .grid(row=12, column=6, sticky=W, padx=5)
+sschools_sb = Spinbox(policies_fr, values=SCHOOLS_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+sschools_sb.grid(row=12, column=7, sticky=W, padx=5)
+
+# Stem Cell Research
+Button(policies_fr, text="Stem Cell Research", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Stem Cell Research"))\
+    .grid(row=13, column=6, sticky=W, padx=5)
+stem_cell_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+stem_cell_sb.grid(row=13, column=7, sticky=W, padx=5)
+
+# Tax Shelters
+Button(policies_fr, text="Tax Shelters", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Tax Shelters"))\
+    .grid(row=14, column=6, sticky=W, padx=5)
+tax_shelter_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+tax_shelter_sb.grid(row=14, column=7, sticky=W, padx=5)
+
+# Technology Colleges
+Button(policies_fr, text="Technology Colleges", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Technology Colleges"))\
+    .grid(row=15, column=6, sticky=W, padx=5)
+tech_college_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+tech_college_sb.grid(row=15, column=7, sticky=W, padx=5)
+
+# Technology Grants
+Button(policies_fr, text="Technology Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Technology Grants"))\
+    .grid(row=16, column=6, sticky=W, padx=5)
+tech_grant_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+tech_grant_sb.grid(row=16, column=7, sticky=W, padx=5)
+
+# Telecommuting Initiative
+Button(policies_fr, text="Telecommuting", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Telecommuting"))\
+    .grid(row=17, column=6, sticky=W, padx=5)
+telecommute_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+telecommute_sb.grid(row=17, column=7, sticky=W, padx=5)
+
+# Tobacco Tax
+Button(policies_fr, text="Tobacco Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Tobacco Tax"))\
+    .grid(row=18, column=6, sticky=W, padx=5)
+tobac_tax_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT)
+tobac_tax_sb.grid(row=18, column=7, sticky=W, padx=5)
+
+# Toll Roads
+Button(policies_fr, text="Toll Roads", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Toll Roads"))\
+    .grid(row=19, column=6, sticky=W, padx=5)
+toll_road_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+toll_road_sb.grid(row=19, column=7, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
