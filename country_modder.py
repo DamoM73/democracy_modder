@@ -119,7 +119,22 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Technology Grants" : "The government can provide state funding to encourage business to invest in new and exciting technologies.\n\nAlthough this helps give us a competitive advantage and can create jobs, it can be argued that its an unnecessary distortion of the market.",
     "Telecommuting" : "Telecommuting, or 'working from home' is seen as desirable because it reduces the pressure on the transport infrastructure, and can be an improvement to people's quality of life. It's also welcomed by parents.\n\nThis policy offers tax incentives to companies supporting this option.",
     "Tobacco Tax" : "Despite the failure of tobacco companies to admit it, there is good reason to believe that smoking has negative effects on health.\n\nThis is used as a justification for taxing tobacco.\n\nCynics point out that the government benefits hugely from a tax on a product it is supposedly against.\n\nHealth campaigners encourage the tax as a way to encourage a more healthy population",
-    "Toll Roads" : "Toll roads charge motorists to use specific roads (normally major highways).\n\nThis is a great example of directly applying market forces, by only charging those who use a particular route for the construction and maintenance of that route.\n\nMotorists tend to see this as just another form of taxation, whereas commuters appreciate not being charged for roads they seldom use."
+    "Toll Roads" : "Toll roads charge motorists to use specific roads (normally major highways).\n\nThis is a great example of directly applying market forces, by only charging those who use a particular route for the construction and maintenance of that route.\n\nMotorists tend to see this as just another form of taxation, whereas commuters appreciate not being charged for roads they seldom use.",
+    "Unemployed Benefit" : "Unemployment benefit is a state benefit given to everyone who is able to work but cannot find employment. Socialists regard this as a minimum safety net for workers out of work because of the whims of the economy. Some believe that high unemployment benefits distort the market and discourage people from seeking work.",
+    "Uni Grants" : "Although not all citizens will pursue a university education, governments can provide subsidies to students to encourage a more educated workforce. University grants also ensure equality of opportunity, as in their absence the cost of a university education can be beyond the reach of working class families.",
+    "Welfare Fraud" : "When government gives so much money out in welfare payments, it's essential that the money is correctly targeted and not exploited by people making spurious claims.\n\nA dedicated fraud department will detect false claimants, recover lost money and reassure middle income tax payers that their taxes are being spent wisely, although it can antagonize legitimate claimants.",
+    "Winter Fuel" : "A special concession given to the elderly. This is a regular welfare payment made to everyone over retirement age towards the cost of their winter fuel bills.\n\nIt is designed to reduce 'fuel poverty' which can occur when some elderly members of society cannot afford to heat their homes in winter.",
+    "Work Safety" : "Work safety law, often known as 'health and safety' is a series of measures to ensure employees are not at risk from injury in their day-to-day activities.\n\nTrade unionists often hail such laws as a valuable defense against unscrupulous employers who may put lives at risk.\n\nMany business leaders are concerned at the high levels of bureaucracy and restrictive practices that can result from such laws, which they see as a burden on business.",
+    "Youth clubs" : "Free youth clubs ensure that teenagers have a 'place to go' which can help them to stay out of trouble, and in the long run, reduce the incidence of street crime.\n\nIt can be resented by some wealthier taxpayers, who see it as an unnecessary expense, paid for by their taxes.",
+    "Abortion Law" : "Few areas of policy incite stronger emotions that the debate over abortion.\n\nOn the 'pro-life' side, are arguments about the rights of the unborn child, and arguments are often made from a religious standpoint.\n\nOn the 'pro-choice' side, there is the argument that the State should not have more say over what a woman does with her body than she does.\n\nMaking any change to the States position on abortion requires a hefty amount of political capital.",
+    "Rent Controls" : "An alternative to state-housing is a system where the state will regulate the private-rental market in a bid to ensure the supply of affordable housing for all, even within the private sector.\n\nCapitalists will naturally see this as a distortion of the free market that will prevent enough homes being built, whereas supporters will say it prevents exploitation of the poor by greedy landlords.",
+    "School Vouchers" : "A measure designed to encourage the growth of private schooling, whilst still enabling everyone to afford an education.\n\nSchool  vouchers are issued by the State to parents for each child which they can then spend in the private sector on education.\n\nThis is a different approach to pure state schooling because with school tax credits the schools are privately run and the teachers are no longer state employees.",
+    "Oil Drilling" : "To encourage investment in new oil and gas drilling, and thus raise the supply of fossil fuel energy for the country, these tax breaks effectively subsidize fossil fuels.\n\nThis will indirectly reduce fuel prices and stimulate the economy, but will be an outrage to environmentalists.",
+    "Mansion Tax" : "A special high rate of tax charged annually on the ownership of super-expensive homes.\n\nThis tax is popular with some because it is almost impossible to avoid, as homes cannot be easily hidden.\n\nIt is perceived as unfair by some elderly people who may have expensive homes but relatively low incomes, and thus have difficulty in paying the annual tax.\n\nIt is a form of wealth-tax, as opposed to income tax.",
+    "Fuel Efficiency" : "Mandatory standards for new cars which dictate the minimum level of fuel efficiency.\n\nThis is a long term measure aimed to raise the fuel efficiency of the country's cars, and thus reduce our dependence on oil, as well as reducing the cost of driving over the long term.\n\nIt will be unpopular with car manufacturers, but a hit with environmentalists.",
+    "Foreign Invest." : "Special tax breaks given to large foreign-owned multinational companies to encourage them to invest in our country.\n\nThis could include tax-free periods, introductory rates of corporate tax, and straight subsidies to encourage investment.\n\nHelps to encourage investment from overseas, but will be seen as incredibly unpatriotic, and pandering to the whims of huge foreign capitalist organizations.",
+    "Robot Research" : "A special grant to encourage research in robotics.\n\nRobotics is a very long term area of research which will eventually bring about vast boosts in productivity.\n\nAt the same time it will reduce the amount of low or semi-skilled jobs in the economy, and thus potentially lead to higher unemployment.",
+    "Private Prisons" : "Rather than directly control and manage a State prison service, this policy allows prisons to be privately owned and managed, and merely paid for by the state.\n\nPrivate prisons could result in lower cost and higher efficiency.\n\nThese measures will be unpopular with trade unionists.\n\nLiberals will have ethical concerns about profiting from incarceration, but still be pleased if spending is high enough to promote rehabilitation."
     }   
 
 # sliders
@@ -146,7 +161,7 @@ MATERNITY_SLIDER = ("None", "Quarter pay", "Half pay", "Three quarters pay", "Fu
 MILITARY_SLIDER = ("Ceremonial only", "Reservists", "Light defensive", "Well trained", "Highly trained", "Overwhelming force")
 NARCOTICS_SLIDER = ("Outlawed", "Legalised cannabis", "Legal LSD", "Leagalise all drugs")
 NATIONAL_SERVICE_SLIDER = ("None", "Basic training", "3 months service", "6 months service", "1 year service", "Periodic service")
-ORGAN_SLIDER = ("By request", "Next of kin approved", "Presumed consent", "No opt-out")
+ORGAN_SLIDER = ("None", "By request", "Next of kin approved", "Presumed consent", "No opt-out")
 WIRE_TAP_SLIDER = ("None", "Gov't decree", "Judicial order", "Police chief consent", "Police request", "Widespread use", "Universal monitoring")
 POLLUTION_SLIDER = ("None", "Minimal monitoring", "Extensive monitoring", "Gov't targets", "Restrictions and fines", "Major fines")
 PRISON_SLIDER = ("Overcrowded cells", "Shared cells", "Basic provisions", "Some re-education", "Extensive rehab.")
@@ -155,9 +170,14 @@ ROAD_SLIDER = ("Essential maintenance", "Basic maintenance", "Existing roads fix
 PRAYER_SLIDER = ("None", "Parental request", "Optional", "Once weekly", "Daily", "Twice daily")
 SCIENCE_SLIDER = ("Test-tubes", "Microscopes", "Electron microscope", "Particle accelerators")
 SPACE_SLIDER = ("None", "Telescope", "Big telescopes", "Arrays of telescopes", "Satellites", "Unmanned probes", "Reusable shuttle", "Space stations")
-SPEED_SLIDER = ("Trials", "Accident hotspots", "Outside Schools", "Residential areas", "Widespread", "Everywhere")
-HEALTH_SLIDER = ("Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent")
-SCHOOLS_SLIDER = ("Wooden schoolhuts", "Shared textbooks", "Modern textbooks", "Student laptops")
+SPEED_SLIDER = ("None", "Trials", "Accident hotspots", "Outside Schools", "Residential areas", "Widespread", "Everywhere")
+HEALTH_SLIDER = ("None", "Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent")
+SCHOOLS_SLIDER = ("None", "Wooden schoolhuts", "Shared textbooks", "Modern textbooks", "Student laptops")
+UNI_SLIDER = ("None", "Partial fees paid", "Fees paid", "Grants for poor", "Partial grants", "Grants for all", "Generous grants")
+WELFARE_SLIDER = ("Reporting hotline", "Press Ads", "TV Ads", "Investigators")
+ABORTION_SLIDER = ("Total ban", "Life threatened", "Limited circumstance", "Two doctors' apporve", "On demand")
+
+
 
 
 
@@ -265,9 +285,10 @@ Button(country_fr,text="Country Description", bg=BG_COLOUR, font=BODY, relief=FL
 description_tb = Text(country_fr,width=63, height=6)
 description_tb.grid(row=1, column=8, rowspan=3, sticky=W, padx=5, pady=5)
 
+
 # ** Policies Frame
 policies_fr = LabelFrame(root,text="Policies", font=HEADING_1, bg= BG_COLOUR)
-policies_fr.grid(row=2, column=0, sticky=W, padx=5, pady=5)
+policies_fr.grid(row=2, column=0, columnspan = 2, sticky=W, padx=5, pady=5)
 
 # Adult Education Subsidies
 Button(policies_fr, text="Adult Education", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Adult Education"))\
@@ -838,6 +859,98 @@ Button(policies_fr, text="Toll Roads", bg=BG_COLOUR, font=BODY, anchor=W, relief
     .grid(row=19, column=6, sticky=W, padx=5)
 toll_road_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 toll_road_sb.grid(row=19, column=7, sticky=W, padx=5)
+
+# Unemployed Benefit 
+Button(policies_fr, text="Unemployed Benefit", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Unemployed Benefit"))\
+    .grid(row=20, column=6, sticky=W, padx=5)
+unemployment_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+unemployment_sb.grid(row=20, column=7, sticky=W, padx=5)
+
+# University Grants
+Button(policies_fr, text="Uni Grants", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Uni Grants"))\
+    .grid(row=21, column=6, sticky=W, padx=5)
+university_sb = Spinbox(policies_fr, values=UNI_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+university_sb.grid(row=21, column=7, sticky=W, padx=5)
+
+# Welfare Fraud Dept.
+Button(policies_fr, text="Welfare Fraud", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Welfare Fraud"))\
+    .grid(row=22, column=6, sticky=W, padx=5)
+wel_fraud_sb = Spinbox(policies_fr, values=WELFARE_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+wel_fraud_sb.grid(row=22, column=7, sticky=W, padx=5)
+
+# Winter Fuel Subsidy
+Button(policies_fr, text="Winter Fuel", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Winter Fuel"))\
+    .grid(row=23, column=6, sticky=W, padx=5)
+winter_fuel_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+winter_fuel_sb.grid(row=23, column=7, sticky=W, padx=5)
+
+# Work Safety Law
+Button(policies_fr, text="Work Safety", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Work Safety"))\
+    .grid(row=24, column=6, sticky=W, padx=5)
+work_safe_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+work_safe_sb.grid(row=24, column=7, sticky=W, padx=5)
+
+# Youth Club Subsidies
+Button(policies_fr, text="Youth Clubs", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Youth Clubs"))\
+    .grid(row=0, column=8, sticky=W, padx=5)
+youth_club_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+youth_club_sb.grid(row=0, column=9, sticky=W, padx=5)
+
+# Abortion Law
+Button(policies_fr, text="Abortion Law", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Abortion Law"))\
+    .grid(row=1, column=8, sticky=W, padx=5)
+abortion_sb = Spinbox(policies_fr, values=ABORTION_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+abortion_sb.grid(row=1, column=9, sticky=W, padx=5)
+
+# Rent Controls
+Button(policies_fr, text="Rent Controls", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Rent Controls"))\
+    .grid(row=2, column=8, sticky=W, padx=5)
+rent_cont_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+rent_cont_sb.grid(row=2, column=9, sticky=W, padx=5)
+
+# School Vouchers
+Button(policies_fr, text="School Vouchers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("School Vouchers"))\
+    .grid(row=3, column=8, sticky=W, padx=5)
+rent_cont_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+rent_cont_sb.grid(row=3, column=9, sticky=W, padx=5)
+
+# Oil Drilling Subsidies
+Button(policies_fr, text="Oil Drilling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Oil Drilling"))\
+    .grid(row=4, column=8, sticky=W, padx=5)
+oil_drilling_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+oil_drilling_sb.grid(row=4, column=9, sticky=W, padx=5)
+
+# Mansion Tax
+Button(policies_fr, text="Mansion Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Mansion Tax"))\
+    .grid(row=5, column=8, sticky=W, padx=5)
+mansion_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+mansion_sb.grid(row=5, column=9, sticky=W, padx=5)
+
+# Fuel Efficiency Standards
+Button(policies_fr, text="Fuel Efficiency", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Fuel Efficiency"))\
+    .grid(row=6, column=8, sticky=W, padx=5)
+fuel_eff_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+fuel_eff_sb.grid(row=6, column=9, sticky=W, padx=5)
+
+# Foreign Investor Tax Breaks
+Button(policies_fr, text="Foreign Invest.", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Foreign Invest."))\
+    .grid(row=7, column=8, sticky=W, padx=5)
+for_invest_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+for_invest_sb.grid(row=7, column=9, sticky=W, padx=5)
+
+# Robotics Research Grants
+Button(policies_fr, text="Robot Research", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Robot Research"))\
+    .grid(row=8, column=8, sticky=W, padx=5)
+robot_research_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+robot_research_sb.grid(row=8, column=9, sticky=W, padx=5)
+
+# Private Prisons
+Button(policies_fr, text="Private Prisons", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Private Prisons"))\
+    .grid(row=9, column=8, sticky=W, padx=5)
+prov_pris_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+prov_pris_sb.grid(row=9, column=9, sticky=W, padx=5)
+
+
 
 # **** run window loop ****
 root.mainloop()
