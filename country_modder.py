@@ -1,6 +1,8 @@
 ''' this program allows users to create their own country for Democracy 3 '''
 from tkinter import *
 from tkinter import messagebox
+import csv
+
 
 WIDTH = 1300
 HEIGHT = 950
@@ -13,7 +15,17 @@ HEADING_2 = ("Arial",12)
 BODY = ("Arial",8)
 SB_WIDTH = 17
 
-INFO = {"Country Name" : "The common name of the country.\nFor example, Australia.",
+'''
+info = {}
+
+with open("policy_info.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        info[row[0]].add(row[1])
+
+
+'''
+info = {"Country Name" : "The common name of the country.\nFor example, Australia.",
     "Leader Title" : "The common title for the leader of the country.\nFor example, President.",
     "Population" : "The number of people residing in the country (in millions).",
     "Currency Symbol" : "The symbol the country uses to denote currency.\n For example $.",
@@ -134,8 +146,23 @@ INFO = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Fuel Efficiency" : "Mandatory standards for new cars which dictate the minimum level of fuel efficiency.\n\nThis is a long term measure aimed to raise the fuel efficiency of the country's cars, and thus reduce our dependence on oil, as well as reducing the cost of driving over the long term.\n\nIt will be unpopular with car manufacturers, but a hit with environmentalists.",
     "Foreign Invest." : "Special tax breaks given to large foreign-owned multinational companies to encourage them to invest in our country.\n\nThis could include tax-free periods, introductory rates of corporate tax, and straight subsidies to encourage investment.\n\nHelps to encourage investment from overseas, but will be seen as incredibly unpatriotic, and pandering to the whims of huge foreign capitalist organizations.",
     "Robot Research" : "A special grant to encourage research in robotics.\n\nRobotics is a very long term area of research which will eventually bring about vast boosts in productivity.\n\nAt the same time it will reduce the amount of low or semi-skilled jobs in the economy, and thus potentially lead to higher unemployment.",
-    "Private Prisons" : "Rather than directly control and manage a State prison service, this policy allows prisons to be privately owned and managed, and merely paid for by the state.\n\nPrivate prisons could result in lower cost and higher efficiency.\n\nThese measures will be unpopular with trade unionists.\n\nLiberals will have ethical concerns about profiting from incarceration, but still be pleased if spending is high enough to promote rehabilitation."
+    "Private Prisons" : "Rather than directly control and manage a State prison service, this policy allows prisons to be privately owned and managed, and merely paid for by the state.\n\nPrivate prisons could result in lower cost and higher efficiency.\n\nThese measures will be unpopular with trade unionists.\n\nLiberals will have ethical concerns about profiting from incarceration, but still be pleased if spending is high enough to promote rehabilitation.",
+    "Junk Food" : "A punitive tax rate charged on unhealthy food such as takeaway hamburgers, fizzy drinks and high sugar or fat content pre-processed food.\n\nLevied with the aim of improving the health of the nation, but can be unpopular.",
+    "Health Food Subsidies" : "A tax incentive that makes healthy food, such as fruit and vegetables, cheaper than the higher fat or higher sugar foods.\n\nSeen as an incentive to eat well, rather than a punishment for eating badly, and thus less punitive on the poor than a 'fat tax'.",
+    "Tasers" : "A non-lethal but still highly effective (and possibly dangerous) weapon which effectively gives criminals an electric shock.\n\nSupporters say it is a good compromise between the need to disable violent criminals and the risk of death associated with traditional firearms.\n\nOpponents claim that the use of such weapons lowers the barrier-to-use for the police and will encourage more casual use of force against the population.",
+    "Police Drones" : "Unmanned aerial reconnaissance vehicles, similar to remote control planes which can be employed by the police force.\n\nThe 'eye in the sky' is a useful way to keep track of mobs and rioters, and allows for subtle yet effective surveillance.\n\nThe police see it as a vital tool for modern crime fighting, but there are concerns that this is a step further towards a big-brother style surveillance society where everyone is tracked.",
+    "Arts Subsidies" : "Investing public money in the arts is controversial with capitalists who see it as supporting uneconomic elitist entertainment, but others see it as vital to a countries culture, boosting our image on the world stage, and attracting tourists.",
+    "Healthcare Vouchers" : "A measure designed to encourage the growth of private health care whilst still enabling everyone access to it.\n\nHealthcare vouchers are  issued by the State to everyone but can then only be spent in the private sector on health care.\n\nThis is a different approach to pure State health care because with health tax credits, the hospitals are privately run and the medical staff are no longer state employees.",
+    "Health Tax Credits" : "A system of tax-reductions and credits designed to encourage people to spend their money on private healthcare, in order to reduce their tax liability.\n\nThis boosts healthcare without involving the state running hospitals or employing doctors, but it's effect is limited to those people in society earning enough to be paying tax in the first place.",
+    "School Tax Credits" : "A system of tax-reductions and credits designed to encourage people to spend their money on private education in order to reduce their tax liability.\n\nThis boosts private schooling without involving the State running schools or employing teachers but it's effect is limited to those people in society earning enough to be paying tax in the first place.",
+    "Food Stamps" : "Food stamps is a system where the state will issue vouchers or 'stamps' to those citizens on low or no income, to ensure they are able to afford food.\n\nUnlike giving a straight cash benefit, food stamps can only be redeemed for uncooked food, preventing them being used for unhealthy takeaway food.\n\nSupporters see food stamps as a valuable way to ensure nobody goes hungry, no matter their income.\n\nCritics consider such a scheme patronizing, and no more than papering over the cracks caused by free market failure and low wages.",
+    "Food Standards Agency" : "A food standards agency is a branch of government dedicated to ensuring the safety and minimum nutritional standards of food supplied within the country.\n\nFarmers may regard the agency as an extra layer of bureaucracy and meddling, but public health campaigners see the agency as an essential line of defense between the consumer and unscrupulous food producers looking to cut costs.",
+    "Enterprise Investment Scheme" : "The Enterprise Investment Scheme is a system which gives tax breaks to wealthy individuals who invest their money in small startup companies which are based in this country.\n\nThe scheme encourages investment in companies which should eventually grow and stimulate the economy, whilst at the same time giving a popular tax break to people who invest in them.\n\nObviously indirectly, the scheme is being subsidized by those without savings to invest.",
+    "Recreational Drugs Tax" : "In societies that have legalized drugs such as Cannabis and Marijuana, there is a temptation to treat consumption of these drugs as a source of government revenue, given the claims that their consumption should be politely discouraged due to the negative effects on citizens health, in a similar way to governments taxing alcohol or tobacco.",
+    "Gated Communities" : "A drastic solution to serious street crime and vandalism, gated communities are basically self-policed residential areas.\n\nThey are popular with the wealthy, but often associated with class divide and inequality, as only the relatively wealthy can afford to live inside them.\n\nAs a result, some governments are reluctant to permit their construction."
     }   
+
+
 
 # sliders
 NAME_LISTS = ("Australia", "Canada", "France", "Germany", "UK", "USA")
@@ -174,13 +201,10 @@ SPEED_SLIDER = ("None", "Trials", "Accident hotspots", "Outside Schools", "Resid
 HEALTH_SLIDER = ("None", "Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent")
 SCHOOLS_SLIDER = ("None", "Wooden schoolhuts", "Shared textbooks", "Modern textbooks", "Student laptops")
 UNI_SLIDER = ("None", "Partial fees paid", "Fees paid", "Grants for poor", "Partial grants", "Grants for all", "Generous grants")
-WELFARE_SLIDER = ("Reporting hotline", "Press Ads", "TV Ads", "Investigators")
+WELFARE_SLIDER = ("None", "Reporting hotline", "Press Ads", "TV Ads", "Investigators")
 ABORTION_SLIDER = ("Total ban", "Life threatened", "Limited circumstance", "Two doctors' apporve", "On demand")
-
-
-
-
-
+ARTS_SLIDER = ("None", "Puppetshows", "Circuses", "Low budget movies", "Theaters", "Art galleries", "Opera house")
+GATED_SLIDER = ("None", "Discouraged", "Indifferent", "Encouraged")
 
 
 
@@ -188,7 +212,7 @@ ABORTION_SLIDER = ("Total ban", "Life threatened", "Limited circumstance", "Two 
 
 # **** Functions ****
 def help_message(key):
-    messagebox.showinfo(key+" Explanation", INFO[key])
+    messagebox.showinfo(key+" Explanation", info[key])
 
 
 # **** Create main window ****
@@ -950,7 +974,83 @@ Button(policies_fr, text="Private Prisons", bg=BG_COLOUR, font=BODY, anchor=W, r
 prov_pris_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 prov_pris_sb.grid(row=9, column=9, sticky=W, padx=5)
 
+# Junk Food Tax
+Button(policies_fr, text="Junk Food", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Junk Food"))\
+    .grid(row=10, column=8, sticky=W, padx=5)
+junk_food_sb = Spinbox(policies_fr, from_=0, to=75, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+junk_food_sb.grid(row=10, column=9, sticky=W, padx=5)
 
+# Health Food Subsidies
+Button(policies_fr, text="Health Food", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Health Food Subsidies"))\
+    .grid(row=11, column=8, sticky=W, padx=5)
+health_food_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+health_food_sb.grid(row=11, column=9, sticky=W, padx=5)
+
+# Tasers
+Button(policies_fr, text="Tasers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Tasers"))\
+    .grid(row=12, column=8, sticky=W, padx=5)
+tasers_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+tasers_sb.grid(row=12, column=9, sticky=W, padx=5)
+
+# Police Drones
+Button(policies_fr, text="Police Drones", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Police Drones"))\
+    .grid(row=13, column=8, sticky=W, padx=5)
+police_drones_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+police_drones_sb.grid(row=13, column=9, sticky=W, padx=5)
+
+# Arts Subsidies
+Button(policies_fr, text="Arts Subsidies ", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Arts Subsidies"))\
+    .grid(row=14, column=8, sticky=W, padx=5)
+art_sub_sb = Spinbox(policies_fr, values=ARTS_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+art_sub_sb.grid(row=14, column=9, sticky=W, padx=5)
+
+# Healthcare Vouchers
+Button(policies_fr, text="Healthcare Vouchers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Healthcare Vouchers"))\
+    .grid(row=15, column=8, sticky=W, padx=5)
+health_vouch_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+health_vouch_sb.grid(row=15, column=9, sticky=W, padx=5)
+
+# Health Tax Credits
+Button(policies_fr, text="Health Tax Credits", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Health Tax Credits"))\
+    .grid(row=16, column=8, sticky=W, padx=5)
+health_tax_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+health_tax_sb.grid(row=16, column=9, sticky=W, padx=5)
+
+# School Tax Credits
+Button(policies_fr, text="School Tax Credits", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("School Tax Credits"))\
+    .grid(row=17, column=8, sticky=W, padx=5)
+school_tax_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+school_tax_sb.grid(row=17, column=9, sticky=W, padx=5)
+
+# Food Stamps
+Button(policies_fr, text="Food Stamps", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Food Stamps"))\
+    .grid(row=18, column=8, sticky=W, padx=5)
+food_stamps_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+food_stamps_sb.grid(row=18, column=9, sticky=W, padx=5)
+
+# Food Standards Agency
+Button(policies_fr, text="Food Standards Agency", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Food Standards Agency"))\
+    .grid(row=19, column=8, sticky=W, padx=5)
+food_stand_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+food_stand_sb.grid(row=19, column=9, sticky=W, padx=5)
+
+# Enterprise Investment Scheme
+Button(policies_fr, text="Enterprise Investment Scheme", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Enterprise Investment Scheme"))\
+    .grid(row=20, column=8, sticky=W, padx=5)
+ent_invest_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+ent_invest_sb.grid(row=20, column=9, sticky=W, padx=5)
+
+# Recreational Drugs Tax
+Button(policies_fr, text="Recreational Drugs Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Recreational Drugs Tax"))\
+    .grid(row=21, column=8, sticky=W, padx=5)
+rec_drug_tax_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+rec_drug_tax_sb.grid(row=21, column=9, sticky=W, padx=5)
+
+# Gated Communities
+Button(policies_fr, text="Gated Communities", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Gated Communities"))\
+    .grid(row=22, column=8, sticky=W, padx=5)
+gated_sb = Spinbox(policies_fr, values=DEFAULT_SLIDER, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+gated_sb.grid(row=22, column=9, sticky=W, padx=5)
 
 # **** run window loop ****
 root.mainloop()
