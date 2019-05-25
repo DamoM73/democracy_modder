@@ -15,14 +15,10 @@ HEADING_2 = ("Arial",12)
 BODY = ("Arial",8)
 SB_WIDTH = 17
 
-'''
-info = {}
 
-with open("policy_info.csv", "r") as file:
-    reader = csv.reader(file)
-    for row in reader:
-        info[row[0]].add(row[1])
-
+# load policy info
+file = open("policy_info.txt","r")      # opens the stored file
+info = eval(file.read())                # read the string and converts to dictionary
 
 '''
 info = {"Country Name" : "The common name of the country.\nFor example, Australia.",
@@ -162,7 +158,7 @@ info = {"Country Name" : "The common name of the country.\nFor example, Australi
     "Gated Communities" : "A drastic solution to serious street crime and vandalism, gated communities are basically self-policed residential areas.\n\nThey are popular with the wealthy, but often associated with class divide and inequality, as only the relatively wealthy can afford to live inside them.\n\nAs a result, some governments are reluctant to permit their construction."
     }   
 
-
+'''
 
 # sliders
 NAME_LISTS = ("Australia", "Canada", "France", "Germany", "UK", "USA")
