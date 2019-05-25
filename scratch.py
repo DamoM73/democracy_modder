@@ -1,5 +1,44 @@
-file = open("policy_info.txt","r")
-content = file.read()
-info = eval(content)
-print(info)
-print(info['Country Name'])
+SLIDERS = {"names list" : ("Australia", "Canada", "France", "Germany", "UK", "USA"),
+    "default values" : ("None", "Low", "Medium", "High", "Maximum"), 
+    "alcohol" : ("No limits", "Min age 16", "Min age 18", "Min age 21", "Low stregnth beer", "Strong retrictions"),
+    "armed police" : ("None","Specialists", "In every dept.", "Widespread", "Every Officer", "Submachineguns"),
+    "border" :  ("Random checks", "Passport checks", "Biometric checks", "Armed guards", "Retina Scans"),
+    "CCTV" : ("None","Crime spots only", "Town centres", "Widespread", "Every street corner", "Facial recognition"),
+    "consumer" : ("None", "Limited rights", "Right to return goods", "Automated refunds", "Cooling-off periods"), 
+    "creation" : ("Creation only", "Creation emphasis", "Both systems", "Evolution emphasis", "Evolution only"),
+    "curfews" : ("None", "For under 16s", "In certain areas", "1am to 3am", "12am to 6am", "10pm to 8am"),
+    "death" : ("None", "Mass murderers", "Homicide", "Homicide & rape", "Violent crimes", "Serious crimes", "Most crimes"),
+    "detention" : ("None", "72 hours", "7 days", "30 days", "90 days", "Unlimited"), 
+    "gambling" : ("None", "Age & stakes limited", "Age limit", "No restrictions"),
+    "handguns" : ("No limit", "No machineguns", "No automatics", "Licence required", "Licence & min age", "Strict controls", "Total ban"),
+    "id" : ("None", "Voluntary", "Widespread", "Compulsory", "Biometric", "Heavily enforced"),
+    "intel" : ("A few spies", "Small spy agency", "Sizeable agency", "High tech agency", "Spy satellite network"),
+    "net censorship" : ("None", "In extreme cases", "On police request", "Some sites blocked", "All traffic monitored"),
+    "jury trial" : ("None", "In exceptional cases", "In serious cases", "If requested", "Widespread", "Universal"),
+    "labor laws" : ("Pro-employer", "Balanced", "Pro-union"), 
+    "marrage tax" : ("None", "Small", "Advantageous", "Incentive"),
+    "maternity" : ("None", "Quarter pay", "Half pay", "Three quarters pay", "Full pay", "Full & paternity leave"),
+    "military" : ("Ceremonial only", "Reservists", "Light defensive", "Well trained", "Highly trained", "Overwhelming force"),
+    "narcotics" : ("Outlawed", "Legalised cannabis", "Legal LSD", "Leagalise all drugs"),
+    "national service" : ("None", "Basic training", "3 months service", "6 months service", "1 year service", "Periodic service"),
+    "organs" : ("None", "By request", "Next of kin approved", "Presumed consent", "No opt-out"),
+    "wire tap" : ("None", "Gov't decree", "Judicial order", "Police chief consent", "Police request", "Widespread use", "Universal monitoring"),
+    "pollution" : ("None", "Minimal monitoring", "Extensive monitoring", "Gov't targets", "Restrictions and fines", "Major fines"),
+    "prison" : ("Overcrowded cells", "Shared cells", "Basic provisions", "Some re-education", "Extensive rehab."),
+    "recycling" : ("None","Poster campaign", "Bottle Banks", "Recycling centers", "Limited collection", "Universal collection"),
+    "roads" : ("Essential maint.", "Basic maint.", "Existing fixed", "Some expansion", "Major expansion", "New road networks"),
+    "prayer" : ("None", "Parental request", "Optional", "Once weekly", "Daily", "Twice daily"),
+    "science" : ("Test-tubes", "Microscopes", "Electron microscope", "Particle accelerators"),
+    "space" : ("None", "Telescope", "Big telescopes", "Arrays of telescopes", "Satellites", "Unmanned probes", "Reusable shuttle", "Space stations"),
+    "speed" : ("None", "Trials", "Accident hotspots", "Outside Schools", "Residential areas", "Widespread", "Everywhere"),
+    "health" : ("None", "Life threatening", "Major ops", "Serious illness only", "Some prevention", "Excellent"),
+    "schools" : ("None", "Wooden schoolhuts", "Shared textbooks", "Modern textbooks", "Student laptops"),
+    "uni" : ("None", "Partial fees paid", "Fees paid", "Grants for poor", "Partial grants", "Grants for all", "Generous grants"),
+    "welfare" : ("None", "Reporting hotline", "Press Ads", "TV Ads", "Investigators"),
+    "abortion" : ("Total ban", "Life threatened", "Limited circum.", "2 doctors apporve", "On demand"),
+    "arts" : ("None", "Puppetshows", "Circuses", "Low budget movies", "Theaters", "Art galleries", "Opera house"),
+    "gated" : ("None", "Discouraged", "Indifferent", "Encouraged")}
+
+f = open("sliders.txt", "w")
+f.write(str(SLIDERS))
+f.close()
