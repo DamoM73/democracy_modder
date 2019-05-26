@@ -1,7 +1,8 @@
 ''' this program allows users to create their own country for Democracy 3 '''
 from tkinter import *
 from tkinter import messagebox
-import csv
+from tkinter import filedialog
+import os
 
 
 WIDTH = 1255
@@ -44,7 +45,59 @@ def load():
     pass
 
 def export():
-    pass
+    '''
+    This fucntion creates the correct folders and files to install the user's country mod
+    '''
+    
+    # *** creating the file structure
+    # establishing democracy 3's path
+    '''
+    correct_path = False
+    while not correct_path:
+        dem3_path = filedialog.askdirectory(title="Select Democracy 3 folder")
+        if os.path.basename(dem3_path) == "democracy3":
+            correct_path = True
+        else:
+            messagebox.showerror("Incorrect Path", "The folder you have selected is not the Democracy 3 folder.\n\nPlease try again.")
+    '''
+
+def check_numbers(value, field):
+    if value.isdigit():
+        return value
+    else:
+        messagebox.showerror(field+" Error", "The value in the {} field needs to be a number.".format(field))
+
+
+def build_country():
+    '''
+    This function writes the values in the GUI to the coutnry dictionary and then returns it
+    '''
+    country_check = True
+    country = {}
+
+    country["currency"] = currency_ent.get()
+    country["population"] = check_numbers(pop_ent.get(), "Population")
+    country["economic_cycle_start"] = str(economic_control.get())
+    country["min_income"] = check_numbers(min_inc_ent.get(), "Min Income")
+    country["max_income"] = check_numbers(max_inc_ent.get(), "Max Income")
+    country["max_gdp"] = check_numbers(max_gdp_ent.get(), "Max GPD")
+    country["min_gpd"] = str(int(country["max_gdp"])//3)
+    country["wealth_mod"] = str(wealth_control.get())
+    country["starting_debt"] = check_numbers(debt_ent.get(), "Debt")
+    country["name"] = name_ent.get().lower()
+    country["guiname"] = name_ent.get().capitalize()
+    country["names_file"] = "data\\names\\{}names.txt".format(cit_name_sb.get().lower())
+    country["term_length"] = "20"
+    country["max_terms"] = "-1"
+    country["details_image"] = "{}_details.jpg".format(country["name"])
+    country["description"] = description_tb.get(1.0,END)
+    country["flag"] = "flag_{}.jpg".format(country["name"])
+    country["apathy"] = "0.5"
+    country["jobtitle"] = leader_ent.get()
+    country["GUID"] = "7"
+
+    print(country)
+
 
 
 # **** Create main window ****
@@ -902,7 +955,7 @@ Button(buttons_fr, text="Save", width = 15, bg=BG_COLOUR, font=BUTTON, command=s
 Button(buttons_fr, text="Load", width = 15, bg=BG_COLOUR, font=BUTTON, command=load).grid(row=0, column=1, padx=5, pady=10, sticky=E)
 
 # Export button
-Button(buttons_fr, text="Export", width = 15, bg=BG_COLOUR, font=BUTTON, command=export).grid(row=0, column=2, padx=5, pady=10, sticky=E)
+Button(buttons_fr, text="Export", width = 15, bg=BG_COLOUR, font=BUTTON, command=build_country).grid(row=0, column=2, padx=5, pady=10, sticky=E)
 
 
 # **** run window loop ****
