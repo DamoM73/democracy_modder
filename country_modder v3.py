@@ -3,6 +3,8 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 import os
+import string
+from shutil import copyfile
 
 
 WIDTH = 1255
@@ -28,8 +30,6 @@ file = open("sliders.txt", "r")
 SLIDERS = eval(file.read())
 file.close()
 
-
-
 # **** Functions ****
 def help_message(key):
     '''
@@ -44,14 +44,13 @@ def save():
 def load():
     pass
 
-def export():
+def export(country_details):
     '''
     This fucntion creates the correct folders and files to install the user's country mod
     '''
     
     # *** creating the file structure
     # establishing democracy 3's path
-    '''
     correct_path = False
     while not correct_path:
         dem3_path = filedialog.askdirectory(title="Select Democracy 3 folder")
@@ -59,44 +58,262 @@ def export():
             correct_path = True
         else:
             messagebox.showerror("Incorrect Path", "The folder you have selected is not the Democracy 3 folder.\n\nPlease try again.")
-    '''
+    
+    # retieve the country name to be used in creating flie and directory names.
+    name = country_details[9][1]
+    
+    # create config file
+    config_file = open(str(dem3_path)+"/data/mods/{}.txt".format(name.replace(" ","_")), "w")
+    config_file.write("[config]\n")
+    config_file.write('name="{} Mod"\n'.format(string.capwords(name)))
+    config_file.write('path="{}"\n'.format(name.replace(" ", "_")))
+    config_file.write('guiname="{}"\n'.format(string.capwords(name)))
+    config_file.write('Author="Democracy 3 Country Modder"\n')
+    config_file.write('Description="A country developed using the Democracy 3 Country Modder by Damien Murtagh')
+
+    # copy large flag file
+    lrg_flag_path = "{}/{}/data/bitmaps/flags".format(str(dem3_path),name.replace(" ", "_"))
+    # checks if folder already exists
+    if not os.path.exists(lrg_flag_path): 
+        os.makedirs(lrg_flag_path)
+    copyfile("large.jpg", lrg_flag_path+"/flag_{}.jpg".format(name.replace(" ","_")))
+
+    # copy small flag file
+    sml_flag_path = "{}/{}/data/bitmaps/missions".format(str(dem3_path),name.replace(" ", "_"))
+    # checks if folder already exists
+    if not os.path.exists(sml_flag_path): 
+        os.makedirs(sml_flag_path)
+    copyfile("small.jpg", sml_flag_path+"/{}_details.jpg".format(name.replace(" ","_")))
+
+    # create country file directory
+    country_file_path = "{}/{}/data/missions/{}".format(str(dem3_path),name.replace(" ", "_"),name.replace(" ", "_"))
+    # checks if folder already exists
+    if not os.path.exists(country_file_path): 
+        os.makedirs(country_file_path)
+
+    # create country file
+    country_file = open(country_file_path+"/{}.txt".format(name.replace(" ","_")), "w")
+    
+    # config section
+    country_file.write("[config]\n")
+    config_lines = country_details[:20]
+    for line in config_lines:
+        country_file.write('{} = {}\n'.format(line[0],line[1]))
+    
+    # options and stats (not relevant)
+    country_file.write("\n[options]\n\n[stats]\n\n")
+
+    # policies and taxes
+    country_file.write("[policies]\n")
+    policy_lines = country_details[20:]
+    for line in policy_lines:
+        country_file.write('{} = {}\n'.format(line[0],line[1]))
+
+
 
 def check_numbers(value, field):
     if value.isdigit():
         return value
     else:
         messagebox.showerror(field+" Error", "The value in the {} field needs to be a number.".format(field))
+        return "error"
 
 
+def check_policy(country_list, policy_detail):
+    policy_val = policy_detail[1]
+    '''
+    This function accepts the country list and a policy details list. If the policy has values other than 'None',
+    it will be appended to the country list. Police is a uncancellabe policy, so even if the user chooses 'None'
+    it will still be appended to the country list. The country list is returned
+    '''
+    if policy_val != "None":
+        value = round(policy_detail[2].index(policy_val) / (len(policy_detail[2])-1),2)
+        country_list.append([policy_detail[0], str(value)])
+    elif policy_detail[0] == "PoliceForce":
+        country_list.append([policy_detail[0], str(0)])
+
+    return country_list
+    
+
+def check_tax(country_list, tax_detail):
+    '''
+    This function accepts the country list and a tax details list. If the tax has values other than 0,
+    it will be appended to the country list. The country list is returned
+    '''
+    value = tax_detail[1]
+    if value != "0":
+        country_list.append([tax_detail[0], str(value)])
+    return country_list
+    
+        
 def build_country():
     '''
-    This function writes the values in the GUI to the coutnry dictionary and then returns it
+    This function writes the values in the GUI to the country dictionary and then returns it
     '''
     country_check = True
-    country = {}
+    country = []
 
-    country["currency"] = currency_ent.get()
-    country["population"] = check_numbers(pop_ent.get(), "Population")
-    country["economic_cycle_start"] = str(economic_control.get())
-    country["min_income"] = check_numbers(min_inc_ent.get(), "Min Income")
-    country["max_income"] = check_numbers(max_inc_ent.get(), "Max Income")
-    country["max_gdp"] = check_numbers(max_gdp_ent.get(), "Max GPD")
-    country["min_gpd"] = str(int(country["max_gdp"])//3)
-    country["wealth_mod"] = str(wealth_control.get())
-    country["starting_debt"] = check_numbers(debt_ent.get(), "Debt")
-    country["name"] = name_ent.get().lower()
-    country["guiname"] = name_ent.get().capitalize()
-    country["names_file"] = "data\\names\\{}names.txt".format(cit_name_sb.get().lower())
-    country["term_length"] = "20"
-    country["max_terms"] = "-1"
-    country["details_image"] = "{}_details.jpg".format(country["name"])
-    country["description"] = description_tb.get(1.0,END)
-    country["flag"] = "flag_{}.jpg".format(country["name"])
-    country["apathy"] = "0.5"
-    country["jobtitle"] = leader_ent.get()
-    country["GUID"] = "7"
+    # config values
+    country.append(["currency", '"{}"'.format(currency_ent.get())])
+    country.append(["population", check_numbers(pop_ent.get(), "Population")])
+    country.append(["economic_cycle_start", str(economic_control.get())])
+    country.append(["min_income", check_numbers(min_inc_ent.get(), "Min Income")])
+    country.append(["max_income", check_numbers(max_inc_ent.get(), "Max Income")])
+    country.append(["max_gdp", check_numbers(max_gdp_ent.get(), "Max GPD")])
+    country.append(["min_gpd", str(int(country[5][1])//3)])
+    country.append(["wealth_mod", str(wealth_control.get())])
+    country.append(["starting_debt", check_numbers(debt_ent.get(), "Debt")])
+    country.append(["name", name_ent.get().lower()])
+    country.append(["guiname", '"{}"'.format(name_ent.get().capitalize())])
+    country.append(["names_file",'"data\\names\\{}names.txt"'.format(cit_name_sb.get().lower())])
+    country.append(["term_length","20"])
+    country.append(["max_terms", "-1"])
+    country.append(["details_image", '"{}_details.jpg"'.format(country[9][0])])
+    country.append(["description", '"{}"'.format(description_tb.get(1.0,END).rstrip("\n"))])
+    country.append(["flag",'"flag_{}.jpg"'.format(country[9][0])])
+    country.append(["apathy", "0.5"])
+    country.append(["jobtitle", '"{}"'.format(leader_ent.get())])
+    country.append(["GUID", "7"])
 
-    print(country)
+    # append data from the policies spin boxes
+    POLICIES = [["AdultEducationSubsidies", ad_ed_sb.get(), SLIDERS["default values"]],
+        ["AgricultureSubsidies", agri_sb.get(),SLIDERS["default values"]],
+        ["AlcoholLaw", alco_sb.get(),SLIDERS["alcohol"]],
+        ["ArmedPolice", arm_pol_sb.get(),SLIDERS["armed police"]],
+        ["BanSundayShopping", sun_trade_sb.get(), SLIDERS["default values"]],
+        ["BiofuelSubsidies", biofuel_sb.get(), SLIDERS["default values"]],
+        ["BorderControls", border_sb.get(), SLIDERS["border"]], 
+        ["BusLanes", bus_lane_sb.get(), SLIDERS["default values"]],
+        ["BusSubsidies", bus_subs_sb.get(), SLIDERS["default values"]],
+        ["CarEmmissionsLimits", car_emissions_sb.get(), SLIDERS["default values"]],
+        ["CarTax", car_tax_sb.get(), SLIDERS["default values"]], 
+        ["CCTVCameras", cctv_sb.get(), SLIDERS["CCTV"]],
+        ["ChildBenefit", childcare_sb.get(), SLIDERS["default values"]],
+        ["ChildcareProvision", childcare_sb.get(), SLIDERS["default values"]],
+        ["CitizenshipTests", citizen_sb.get(), SLIDERS["default values"]],
+        ["CleanEnergySubsidies", clean_energy_sb.get(), SLIDERS["default values"]],
+        ["CleanFuelSubsidy", clean_fuel_sb.get(), SLIDERS["default values"]],
+        ["CommunityPolicing", com_pol_sb.get(), SLIDERS["default values"]],
+        ["ConsumerRights", consumer_rts_sb.get(), SLIDERS["consumer"]],
+        ["Creationism", creationism_sb.get(), SLIDERS["creation"]],
+        ["Curfews", curfews_sb.get(), SLIDERS["curfews"]],
+        ["DeathPenalty", death_pen_sb.get(), SLIDERS["death"]],
+        ["DetentionWithoutTrial", detention_sb.get(), SLIDERS["detention"]],
+        ["DisabilityBenefit", disability_sb.get(), SLIDERS["detention"]],
+        ["FaithSchoolSubsidies", faith_schools_sb.get(), SLIDERS["default values"]],
+        ["ForeignAid", foreign_aid_sb.get(), SLIDERS["default values"]],
+        ["FreeBusPasses", bus_passes_sb.get(), SLIDERS["default values"]],
+        ["FreeEyeTests", eye_tests_sb.get(), SLIDERS["default values"]],
+        ["FreeSchoolMeals", school_meals_sb.get(), SLIDERS["default values"]],
+        ["Gambling", gambling_sb.get(), SLIDERS["gambling"]], 
+        ["GatedCommunities", gated_sb.get(), SLIDERS["gated"]],
+        ["GraduateTax", grad_tax_sb.get(), SLIDERS["default values"]],
+        ["HandgunLaws", handgun_sb.get(), SLIDERS["handguns"]],
+        ["HybridCarsInitiative", hybrid_sb.get(), SLIDERS["default values"]],
+        ["IDCards", id_sb.get(), SLIDERS["id"]],
+        ["ImportTarrifs", tariffs_sb.get(), SLIDERS["default values"]],
+        ["IntelligenceServices", intel_sb.get(), SLIDERS["intel"]],
+        ["InternetCensorship", internet_censorship_sb.get(), SLIDERS["net censorship"]],
+        ["JuryTrial", jury_trial_sb.get(), SLIDERS["jury trial"]],
+        ["LabourLaws", labor_laws_sb.get(), SLIDERS["labor laws"]],
+        ["LegalAid", legal_aid_sb.get(), SLIDERS["default values"]],
+        ["LegaliseProstitution", prostitution_sb.get(), SLIDERS["default values"]],
+        ["MarriedTaxAllowance", married_tax_sb.get(), SLIDERS["marrage tax"]],
+        ["MaternityLeave", maternity_sb.get(), SLIDERS["maternity"]],
+        ["MicrogenerationGrants", microgen_grants_sb.get(), SLIDERS["default values"]],
+        ["MilitarySpending", military_sb.get(), SLIDERS["military"]],
+        ["Monorail", monorail_sb.get(), SLIDERS["default values"]],
+        ["MortgageTaxRelief", mortgage_relief_sb.get(), SLIDERS["default values"]],
+        ["Narcotics", narcotics_sb.get(), SLIDERS["narcotics"]],
+        ["NationalService", national_service_sb.get(), SLIDERS["national service"]],
+        ["OrganDonation", organ_donor_sb.get(), SLIDERS["organs"]],
+        ["OrganicSubsidy", organic_farm_sb.get(), SLIDERS["default values"]],
+        ["PhoneTapping", wire_tapping_sb.get(), SLIDERS["wire tap"]], 
+        ["PlasticBagTax", plas_bag_sb.get(), SLIDERS["default values"]],
+        ["PoliceForce", police_sb.get(), SLIDERS["default values"]],
+        ["PollutionControls", pollution_sb.get(), SLIDERS["pollution"]],
+        ["PrisonerTagging", pris_tag_sb.get(), SLIDERS["default values"]],
+        ["Prisons", prisons_sb.get(), SLIDERS["prison"]],
+        ["PublicLibraries", libraries_sb.get(), SLIDERS["default values"],
+        ["RacialProfiling", profiling_sb.get(), SLIDERS["default values"]],
+        ["RaceDiscriminationAct", discrimination_sb.get(), SLIDERS["default values"]],
+        ["RailSubsidies", rail_subs_sb.get(), SLIDERS["default values"]],
+        ["Recycling", recycling_sb.get(), SLIDERS["recycling"]],
+        ["RoadBuilding", roads_sb.get(), SLIDERS["roads"]],
+        ["RuralDevelopmentGrants", rural_dev_sb.get(), SLIDERS["default values"]],
+        ["SateliteRoadPricing", sat_rd_sb.get(), SLIDERS["default values"]],
+        ["SchoolBuses", sub_sch_bus_sb.get(), SLIDERS["default values"]],
+        ["SchoolPrayers", prayer_sb.get(),SLIDERS["prayer"]],
+        ["ScienceFunding", science_sb.get(),SLIDERS["science"]],
+        ["SmallBusinessGrants", small_business_sb.get(), SLIDERS["default values"]],
+        ["SpaceProgram", space_sb.get(), SLIDERS["space"]],
+        ["SpeedCameras", speed_sb.get(), SLIDERS["speed"]],
+        ["StateHealthService", health_sb.get(), SLIDERS["health"]],
+        ["StateHousing", housing_sb.get(), SLIDERS["default values"]],
+        ["StatePensions", pension_sb.get(), SLIDERS["default values"]],
+        ["StateSchools", sschools_sb.get(), SLIDERS["schools"]],
+        ["StemCells", stem_cell_sb.get(), SLIDERS["default values"]],
+        ["TaxShelters", tax_shelter_sb.get(), SLIDERS["default values"]], 
+        ["TechnologyColleges", tech_college_sb.get(), SLIDERS["default values"]],
+        ["TechnologyGrants", tech_grant_sb.get(), SLIDERS["default values"]],
+        ["TelecommutingInitiative", telecommute_sb.get(), SLIDERS["default values"]],
+        ["TollRoads", toll_road_sb.get(), SLIDERS["default values"]],
+        ["UnemployedBenefit", unemployment_sb.get(), SLIDERS["default values"]],
+        ["UniversityGrants", university_sb.get(), SLIDERS["uni"]],
+        ["WelfareFraudDept", wel_fraud_sb.get(), SLIDERS["welfare"]],
+        ["WinterFuelSubsidy", winter_fuel_sb.get(), SLIDERS["default values"]],
+        ["WorkSafetyLaw", work_safe_sb.get(), SLIDERS["default values"]],
+        ["YouthClubSubsidies", youth_club_sb.get(), SLIDERS["default values"]],
+        ["AbortionLaw", abortion_sb.get(), SLIDERS["abortion"]],
+        ["RentControls", rent_cont_sb.get(), SLIDERS["default values"]],
+        ["SchoolVouchers", school_vouch_sb.get(), SLIDERS["default values"]],
+        ["OilDrillingSubsidy", oil_drilling_sb.get(), SLIDERS["default values"]],
+        ["MansionTax", mansion_sb.get(), SLIDERS["default values"]],
+        ["FuelEfficiency", fuel_eff_sb.get(), SLIDERS["default values"]],
+        ["ForeignInvestorTaxBreaks", for_invest_sb.get(), SLIDERS["default values"]],
+        ["RoboticsResearch", robot_research_sb.get(), SLIDERS["default values"]],
+        ["PrivatePrisons", prov_pris_sb.get(), SLIDERS["default values"]], 
+        ["HealthFoodSubsidies", health_food_sb.get(), SLIDERS["default values"]],
+        ["Tasers", tasers_sb.get(), SLIDERS["default values"]],
+        ["PoliceDrones", police_drones_sb.get(), SLIDERS["default values"]],
+        ["ArtsSubsidies", art_sub_sb.get(), SLIDERS["arts"]],
+        ["HealthcareVouchers", health_food_sb.get(), SLIDERS["default values"]],
+        ["HealthTaxCredits", health_tax_sb.get(), SLIDERS["default values"]],
+        ["SchoolTaxCredits", school_tax_sb.get(), SLIDERS["default values"]],
+        ["FoodStamps", food_stamps_sb.get(), SLIDERS["default values"]],
+        ["FoodStandards", food_stand_sb.get(), SLIDERS["default values"]],
+        ["EnterpriseInvestmentScheme", ent_invest_sb.get(), SLIDERS["default values"]],
+        ["RecreationalDrugsTax", rec_drug_tax_sb, SLIDERS["default values"]]]]
+    
+    for policy in POLICIES:
+        country = check_policy(country, policy)
+    
+    # append data from the taxes spin boxes
+    TAXES = [["AirlineTax", airline_tax_sb.get()], 
+        ["AlcoholTax", alco_tax_sb.get()],
+        ["CarbonTax", carbon_tax_sb.get()],
+        ["CorporationTax", corp_tax_sb.get()],
+        ["IncomeTax", income_tax_sb.get()],
+        ["FlatTax", flat_income_tax_sb.get()],
+        ["CapitalGainsTax", cap_gains_sb.get()],
+        ["InheritanceTax", inheritance_tax_sb.get()],
+        ["InternetTax", internet_tax_sb.get()],
+        ["LuxuryGoodsTax", luxary_tax_sb.get()],
+        ["PetrolTax", petrol_tax_sb.get()],
+        ["PropertyTax", prop_tax_sb.get()],
+        ["SalesTax", sales_tax_sb.get()],
+        ["TobaccoTax", tobac_tax_sb.get()],
+        ["JunkFoodTax", junk_food_sb.get()]]  
+    
+    for tax in TAXES:
+        country = check_tax(country,tax)
+
+    # send the country list to be written to file.
+    export(country)
+
+
+    
+    
 
 
 
@@ -341,7 +558,7 @@ consumer_rts_sb.grid(row=21, column=1, sticky=W, padx=5)
 # Corporation Tax
 Button(policies_fr, text="Corporation Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Corporation Tax"))\
     .grid(row=22, column=0, sticky=W, padx=5)
-corp_tax_sb = Spinbox(policies_fr, from_=1, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT, state="readonly")
+corp_tax_sb = Spinbox(policies_fr, from_=0, to=50, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT, state="readonly")
 corp_tax_sb.grid(row=22, column=1, sticky=W, padx=5)
 
 # Creation. v Evol
@@ -455,8 +672,8 @@ flat_income_tax_sb.grid(row=15, column=3, sticky=W, padx=5)
 # Capital Gains Tax
 Button(policies_fr, text="Capital Gains Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Capital Gains Tax"))\
     .grid(row=16, column=2, sticky=W, padx=5)
-flat_income_tax_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT, state="readonly")
-flat_income_tax_sb.grid(row=16, column=3, sticky=W, padx=5)
+cap_gains_sb = Spinbox(policies_fr, from_=0, to=90, bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, justify=RIGHT, state="readonly")
+cap_gains_sb.grid(row=16, column=3, sticky=W, padx=5)
 
 # Inheritance Tax
 Button(policies_fr, text="Inheritance Tax", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Inheritance Tax"))\
@@ -641,8 +858,8 @@ discrimination_sb.grid(row=21, column=5, sticky=W, padx=5)
 # Rail Subsidies
 Button(policies_fr, text="Rail Subsidies", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Rail Subsidies"))\
     .grid(row=22, column=4, sticky=W, padx=5)
-discrimination_sb = Spinbox(policies_fr, values=SLIDERS["default values"], bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-discrimination_sb.grid(row=22, column=5, sticky=W, padx=5)
+rail_subs_sb = Spinbox(policies_fr, values=SLIDERS["default values"], bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+rail_subs_sb.grid(row=22, column=5, sticky=W, padx=5)
 
 # Recycling
 Button(policies_fr, text="Recycling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Recycling"))\
@@ -827,8 +1044,8 @@ rent_cont_sb.grid(row=2, column=9, sticky=W, padx=5)
 # School Vouchers
 Button(policies_fr, text="School Vouchers", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("School Vouchers"))\
     .grid(row=3, column=8, sticky=W, padx=5)
-rent_cont_sb = Spinbox(policies_fr, values=SLIDERS["default values"], bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
-rent_cont_sb.grid(row=3, column=9, sticky=W, padx=5)
+school_vouch_sb = Spinbox(policies_fr, values=SLIDERS["default values"], bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
+school_vouch_sb.grid(row=3, column=9, sticky=W, padx=5)
 
 # Oil Drilling Subsidies
 Button(policies_fr, text="Oil Drilling", bg=BG_COLOUR, font=BODY, anchor=W, relief=FLAT, command=lambda: help_message("Oil Drilling"))\
