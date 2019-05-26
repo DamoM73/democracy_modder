@@ -8,7 +8,7 @@ from shutil import copyfile
 
 
 WIDTH = 1255
-HEIGHT = 950
+HEIGHT = 894
 
 # formatting
 BG_COLOUR = "light grey"
@@ -109,6 +109,8 @@ def export(country_details):
     for line in policy_lines:
         country_file.write('{} = {}\n'.format(line[0],line[1]))
 
+    # complete message
+    messagebox.showinfo("Export Complete", "Success.\n\nYour country mod has been generated and installed")
 
 
 def check_numbers(value, field):
@@ -142,7 +144,7 @@ def check_tax(country_list, tax_detail):
     '''
     value = tax_detail[1]
     if value != "0":
-        country_list.append([tax_detail[0], str(value)])
+        country_list.append([tax_detail[0], str(float(value)/100)])
     return country_list
     
         
@@ -1161,6 +1163,7 @@ Button(policies_fr, text="Gated Communities", bg=BG_COLOUR, font=BODY, anchor=W,
 gated_sb = Spinbox(policies_fr, values=SLIDERS["gated"], bg=ENTRY_COLOUR, font=BODY, relief=FLAT, width=SB_WIDTH, state="readonly")
 gated_sb.grid(row=22, column=9, sticky=W, padx=5)
 
+'''
 # *** Bottom button frame
 buttons_fr = Frame(root, bg=BG_COLOUR)
 buttons_fr.grid(row=3, column=0, columnspan= 2, sticky=E, padx=5)
@@ -1170,9 +1173,10 @@ Button(buttons_fr, text="Save", width = 15, bg=BG_COLOUR, font=BUTTON, command=s
 
 # Load button
 Button(buttons_fr, text="Load", width = 15, bg=BG_COLOUR, font=BUTTON, command=load).grid(row=0, column=1, padx=5, pady=10, sticky=E)
-
+'''
 # Export button
-Button(buttons_fr, text="Export", width = 15, bg=BG_COLOUR, font=BUTTON, command=build_country).grid(row=0, column=2, padx=5, pady=10, sticky=E)
+Button(policies_fr, text="Export", width = 15, bg=BG_COLOUR, font=BUTTON, command=build_country)\
+    .grid(row=23, column=8, columnspan=2, rowspan=2, sticky=E+W, padx=5)
 
 
 # **** run window loop ****
