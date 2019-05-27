@@ -194,6 +194,7 @@ def help_message(key):
 # **** Create main window ****
 root = Tk()
 root.geometry(str(WIDTH)+"x"+str(HEIGHT))
+#root.geometry("{0}x{1}".format(root.winfo_screenwidth(), root.winfo_screenheight()))
 root.title("Democracy 3 Country Generator")
 root.config(bg=BG_COLOUR)
 
